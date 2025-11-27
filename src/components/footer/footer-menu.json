@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_footer_footer_menus",
+  "info": {
+    "displayName": "footer_menu"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "menus": {
+      "type": "component",
+      "component": "shared.menus",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

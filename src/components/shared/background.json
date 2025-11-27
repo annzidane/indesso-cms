@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_backgrounds",
+  "info": {
+    "displayName": "background"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

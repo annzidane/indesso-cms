@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_page_slugs",
+  "info": {
+    "displayName": "page_info"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "path": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

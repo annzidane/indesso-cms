@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_page_impact_cards",
+  "info": {
+    "displayName": "impact_card"
+  },
+  "options": {},
+  "attributes": {
+    "opener": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

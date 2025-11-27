@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_home_page_reason_sections",
+  "info": {
+    "displayName": "reason_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "main_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "matric_card": {
+      "type": "component",
+      "component": "home-page.matric-card",
+      "repeatable": false
+    },
+    "statistic_card": {
+      "type": "component",
+      "component": "home-page.stats-card",
+      "repeatable": true
+    },
+    "impact_card": {
+      "type": "component",
+      "component": "home-page.impact-card",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

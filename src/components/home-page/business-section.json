@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_page_business_sections",
+  "info": {
+    "displayName": "business_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "main_title": {
+      "type": "text"
+    },
+    "card": {
+      "type": "component",
+      "component": "home-page.business-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

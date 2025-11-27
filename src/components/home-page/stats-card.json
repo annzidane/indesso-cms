@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_page_stats_cards",
+  "info": {
+    "displayName": "stats_card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

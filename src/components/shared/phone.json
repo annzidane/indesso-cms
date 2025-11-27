@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_phones",
+  "info": {
+    "displayName": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "phone_title": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "biginteger",
+      "min": "011",
+      "max": "013"
+    }
+  },
+  "config": {}
+}

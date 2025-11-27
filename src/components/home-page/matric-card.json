@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_home_page_matric_cards",
+  "info": {
+    "displayName": "matric_card"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "total_employee": {
+      "type": "string"
+    },
+    "title_employee": {
+      "type": "string"
+    },
+    "text_employee": {
+      "type": "text"
+    },
+    "total_people": {
+      "type": "string"
+    },
+    "title_people": {
+      "type": "string"
+    },
+    "text_people": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

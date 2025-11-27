@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_home_page_about_us_sections",
+  "info": {
+    "displayName": "about_us_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "feature": {
+      "type": "component",
+      "component": "shared.feature",
+      "repeatable": false
+    },
+    "card": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": false
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

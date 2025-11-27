@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_page_business_cards",
+  "info": {
+    "displayName": "business_card"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "component",
+      "component": "shared.feature",
+      "repeatable": false
+    },
+    "ingredient_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

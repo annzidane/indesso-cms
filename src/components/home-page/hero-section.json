@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_page_hero_sections",
+  "info": {
+    "displayName": "hero_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "hero_badge": {
+      "type": "component",
+      "component": "shared.badge",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

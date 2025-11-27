@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "seo"
+  },
+  "options": {},
+  "attributes": {
+    "meta_title": {
+      "type": "text",
+      "maxLength": 60
+    },
+    "meta_description": {
+      "type": "text",
+      "maxLength": 160
+    },
+    "keywords": {
+      "type": "component",
+      "component": "shared.keywords",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
