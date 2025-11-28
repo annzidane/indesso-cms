@@ -8,17 +8,25 @@
     "title": {
       "type": "string"
     },
-    "background_image": {
+    "main_title": {
+      "type": "text"
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "feature_image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
         "images"
       ]
     },
-    "feature": {
-      "type": "component",
-      "component": "shared.feature",
-      "repeatable": false
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "card": {
       "type": "component",

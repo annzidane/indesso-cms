@@ -21,7 +21,9 @@ export interface HomePageAboutUsSection extends Struct.ComponentSchema {
     background_image: Schema.Attribute.Media<'images'>;
     button: Schema.Attribute.Component<'shared.button', false>;
     card: Schema.Attribute.Component<'shared.card', false>;
-    feature: Schema.Attribute.Component<'shared.feature', false>;
+    feature_image: Schema.Attribute.Media<'images'>;
+    main_title: Schema.Attribute.Text;
+    text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
   };
 }
@@ -32,9 +34,12 @@ export interface HomePageBusinessCard extends Struct.ComponentSchema {
     displayName: 'business_card';
   };
   attributes: {
-    button: Schema.Attribute.Component<'shared.button', false>;
-    feature: Schema.Attribute.Component<'shared.feature', false>;
+    card_image: Schema.Attribute.Media<'images'>;
+    description: Schema.Attribute.Text;
     ingredient_image: Schema.Attribute.Media<'images'>;
+    path: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    title_button: Schema.Attribute.String;
   };
 }
 
@@ -44,7 +49,7 @@ export interface HomePageBusinessSection extends Struct.ComponentSchema {
     displayName: 'business_section';
   };
   attributes: {
-    card: Schema.Attribute.Component<'home-page.business-card', true>;
+    business_card: Schema.Attribute.Component<'home-page.business-card', true>;
     main_title: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -57,8 +62,10 @@ export interface HomePageHeroSection extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
-    hero_badge: Schema.Attribute.Component<'shared.badge', false>;
+    description_badge: Schema.Attribute.Text;
+    image_badge: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
+    title_badge: Schema.Attribute.String;
   };
 }
 
@@ -82,13 +89,11 @@ export interface HomePageMatricCard extends Struct.ComponentSchema {
     displayName: 'matric_card';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    text_employee: Schema.Attribute.Text;
-    text_people: Schema.Attribute.Text;
+    description_employee: Schema.Attribute.Text;
+    description_people: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
     title_employee: Schema.Attribute.String;
     title_people: Schema.Attribute.String;
-    total_employee: Schema.Attribute.String;
-    total_people: Schema.Attribute.String;
   };
 }
 

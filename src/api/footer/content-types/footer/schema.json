@@ -56,7 +56,7 @@
       "component": "shared.email",
       "repeatable": false
     },
-    "menus": {
+    "footer_menus": {
       "type": "component",
       "pluginOptions": {
         "i18n": {

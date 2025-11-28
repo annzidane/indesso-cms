@@ -13,10 +13,18 @@
       "component": "shared.button",
       "repeatable": false
     },
-    "hero_badge": {
-      "type": "component",
-      "component": "shared.badge",
-      "repeatable": false
+    "title_badge": {
+      "type": "string"
+    },
+    "description_badge": {
+      "type": "text"
+    },
+    "image_badge": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

@@ -5,10 +5,18 @@
   },
   "options": {},
   "attributes": {
-    "feature": {
-      "type": "component",
-      "component": "shared.feature",
-      "repeatable": false
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "card_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "ingredient_image": {
       "type": "media",
@@ -17,10 +25,11 @@
         "images"
       ]
     },
-    "button": {
-      "type": "component",
-      "component": "shared.button",
-      "repeatable": false
+    "title_button": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
     }
   },
   "config": {}

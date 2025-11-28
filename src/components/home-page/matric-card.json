@@ -8,27 +8,21 @@
     "image": {
       "type": "media",
       "multiple": false,
+      "required": false,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
-    },
-    "total_employee": {
-      "type": "string"
     },
     "title_employee": {
       "type": "string"
     },
-    "text_employee": {
+    "description_employee": {
       "type": "text"
-    },
-    "total_people": {
-      "type": "string"
     },
     "title_people": {
       "type": "string"
     },
-    "text_people": {
+    "description_people": {
       "type": "text"
     }
   },

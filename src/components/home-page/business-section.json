@@ -11,7 +11,7 @@
     "main_title": {
       "type": "text"
     },
-    "card": {
+    "business_card": {
       "type": "component",
       "component": "home-page.business-card",
       "repeatable": true
