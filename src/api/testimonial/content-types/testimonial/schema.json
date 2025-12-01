@@ -17,7 +17,7 @@
     "Position": {
       "type": "string"
     },
-    "Testimonial": {
+    "Description": {
       "type": "string"
     },
     "Image": {
