@@ -1,7 +1,25 @@
 export default ({ env }) => ({
+  // Upload provider - MinIO
+  upload: {
+    config: {
+      provider: 'strapi-provider-upload-minio-ce',
+      providerOptions: {
+        accessKey: env('MINIO_ACCESS_KEY'),
+        secretKey: env('MINIO_SECRET_KEY'),
+        bucket: env('MINIO_BUCKET'),
+        endPoint: env('MINIO_ENDPOINT'),
+        port: parseInt(env('MINIO_PORT', '9000')),
+        useSSL: env('MINIO_USE_SSL', 'false') === 'true',
+        folder: '',
+        isDocker: false,
+        host: env('MINIO_CDN_URL'),
+      },
+    },
+  },
+  // Email provider
   email: {
     config: {
-      provider: 'sendmail', // replace with your provider
+      provider: 'sendmail',
       providerOptions: {
         host: env('SMTP_HOST', 'sandbox.smtp.mailtrap.io'),
         port: env.int('SMTP_PORT', 2525),

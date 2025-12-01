@@ -1,7 +1,32 @@
-export default [
+export default ({ env }) => [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            `${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
+            `http://${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            `${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
+            `http://${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
+          ],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',

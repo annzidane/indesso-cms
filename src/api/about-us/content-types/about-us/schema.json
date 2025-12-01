@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "page_sections": {
+      "type": "dynamiczone",
+      "components": [
+        "about-us.story-section",
+        "about-us.scientific-mastery-section",
+        "about-us.responsible-operations-section",
+        "about-us.research-innovation-section",
+        "about-us.board-section",
+        "about-us.hero-section"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

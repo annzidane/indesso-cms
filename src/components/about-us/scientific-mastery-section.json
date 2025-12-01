@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_about_us_scientific_mastery_sections",
+  "info": {
+    "displayName": "scientific_mastery_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "tabs": {
+      "type": "component",
+      "component": "about-us.scientific-tab",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

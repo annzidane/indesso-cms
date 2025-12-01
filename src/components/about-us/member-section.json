@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_member_sections",
+  "info": {
+    "displayName": "member_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "members": {
+      "type": "component",
+      "component": "about-us.leadership",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_us_stories",
+  "info": {
+    "displayName": "story"
+  },
+  "options": {},
+  "attributes": {
+    "stories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::story.story"
+    }
+  },
+  "config": {}
+}

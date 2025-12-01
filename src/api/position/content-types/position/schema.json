@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "positions",
+  "info": {
+    "singularName": "position",
+    "pluralName": "positions",
+    "displayName": "Position"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "code": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "commissioner",
+        "director"
+      ]
+    },
+    "order_number": {
+      "type": "integer"
+    }
+  }
+}

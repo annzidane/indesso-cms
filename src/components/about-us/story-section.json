@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_us_story_sections",
+  "info": {
+    "displayName": "story_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "stories": {
+      "type": "component",
+      "component": "about-us.story",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

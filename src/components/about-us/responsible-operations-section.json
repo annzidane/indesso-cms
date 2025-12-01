@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_about_us_responsible_operations_sections",
+  "info": {
+    "displayName": "responsible_operations_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "accordion_items": {
+      "type": "component",
+      "component": "shared.accordion-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

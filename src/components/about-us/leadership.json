@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_about_us_leaderships",
+  "info": {
+    "displayName": "member_card"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "text"
+    },
+    "position": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::position.position"
+    },
+    "order_number": {
+      "type": "integer",
+      "unique": true
+    }
+  },
+  "config": {}
+}

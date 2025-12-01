@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_about_us_scientific_tabs",
+  "info": {
+    "displayName": "scientific_tab"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "text",
+      "unique": true
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "left_block_title": {
+      "type": "text"
+    },
+    "left_block_text": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

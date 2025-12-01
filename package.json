@@ -20,10 +20,14 @@
     "@strapi/plugin-users-permissions": "5.31.0",
     "@strapi/provider-email-nodemailer": "^5.31.2",
     "@strapi/strapi": "5.31.0",
-    "mysql2": "3.9.8",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^17.2.3",
+    "mime-types": "^3.0.2",
+    "mysql2": "^3.9.8",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-provider-upload-minio-ce": "^1.2.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_us_board_sections",
+  "info": {
+    "displayName": "board_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "sections": {
+      "type": "component",
+      "component": "about-us.member-section",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,5 +1,131 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutUsBoardSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_board_sections';
+  info: {
+    displayName: 'board_section';
+  };
+  attributes: {
+    eyebrow: Schema.Attribute.String;
+    sections: Schema.Attribute.Component<'about-us.member-section', true>;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface AboutUsHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_hero_sections';
+  info: {
+    displayName: 'hero_section';
+  };
+  attributes: {
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+  };
+}
+
+export interface AboutUsLeadership extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_leaderships';
+  info: {
+    displayName: 'member_card';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.Text;
+    order_number: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    position: Schema.Attribute.Relation<'oneToOne', 'api::position.position'>;
+  };
+}
+
+export interface AboutUsMemberSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_member_sections';
+  info: {
+    displayName: 'member_section';
+  };
+  attributes: {
+    members: Schema.Attribute.Component<'about-us.leadership', true>;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface AboutUsResearchInnovationSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_research_innovation_sections';
+  info: {
+    displayName: 'research_innovation_section';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'shared.feature', true>;
+    description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface AboutUsResponsibleOperationsSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_responsible_operations_sections';
+  info: {
+    displayName: 'responsible_operations_section';
+  };
+  attributes: {
+    accordion_items: Schema.Attribute.Component<'shared.accordion-item', true>;
+    background_image: Schema.Attribute.Media<'images'>;
+    description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface AboutUsScientificMasterySection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_scientific_mastery_sections';
+  info: {
+    displayName: 'scientific_mastery_section';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    tabs: Schema.Attribute.Component<'about-us.scientific-tab', true>;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface AboutUsScientificTab extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_scientific_tabs';
+  info: {
+    displayName: 'scientific_tab';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    left_block_text: Schema.Attribute.Blocks;
+    left_block_title: Schema.Attribute.Text;
+    main_image: Schema.Attribute.Media<'images'>;
+    slug: Schema.Attribute.Text & Schema.Attribute.Unique;
+  };
+}
+
+export interface AboutUsStory extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_stories';
+  info: {
+    displayName: 'story';
+  };
+  attributes: {
+    stories: Schema.Attribute.Relation<'oneToMany', 'api::story.story'>;
+  };
+}
+
+export interface AboutUsStorySection extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_story_sections';
+  info: {
+    displayName: 'story_section';
+  };
+  attributes: {
+    eyebrow: Schema.Attribute.String;
+    stories: Schema.Attribute.Component<'about-us.story', true>;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface FooterFooterMenu extends Struct.ComponentSchema {
   collectionName: 'components_footer_footer_menus';
   info: {
@@ -124,6 +250,17 @@ export interface HomePageStatsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAccordionItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_accordion_items';
+  info: {
+    displayName: 'accordion_item';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBackground extends Struct.ComponentSchema {
   collectionName: 'components_shared_backgrounds';
   info: {
@@ -198,6 +335,17 @@ export interface SharedFeature extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
   };
 }
@@ -358,6 +506,16 @@ export interface SharedTitleDescription extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about-us.board-section': AboutUsBoardSection;
+      'about-us.hero-section': AboutUsHeroSection;
+      'about-us.leadership': AboutUsLeadership;
+      'about-us.member-section': AboutUsMemberSection;
+      'about-us.research-innovation-section': AboutUsResearchInnovationSection;
+      'about-us.responsible-operations-section': AboutUsResponsibleOperationsSection;
+      'about-us.scientific-mastery-section': AboutUsScientificMasterySection;
+      'about-us.scientific-tab': AboutUsScientificTab;
+      'about-us.story': AboutUsStory;
+      'about-us.story-section': AboutUsStorySection;
       'footer.footer-menu': FooterFooterMenu;
       'home-page.about-us-section': HomePageAboutUsSection;
       'home-page.business-card': HomePageBusinessCard;
@@ -367,6 +525,7 @@ declare module '@strapi/strapi' {
       'home-page.matric-card': HomePageMatricCard;
       'home-page.reason-section': HomePageReasonSection;
       'home-page.stats-card': HomePageStatsCard;
+      'shared.accordion-item': SharedAccordionItem;
       'shared.background': SharedBackground;
       'shared.badge': SharedBadge;
       'shared.button': SharedButton;
@@ -374,6 +533,7 @@ declare module '@strapi/strapi' {
       'shared.description': SharedDescription;
       'shared.email': SharedEmail;
       'shared.feature': SharedFeature;
+      'shared.hero': SharedHero;
       'shared.keywords': SharedKeywords;
       'shared.lang': SharedLang;
       'shared.logo': SharedLogo;
