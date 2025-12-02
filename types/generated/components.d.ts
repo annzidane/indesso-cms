@@ -28,8 +28,9 @@ export interface AboutUsLeadership extends Struct.ComponentSchema {
     displayName: 'member_card';
   };
   attributes: {
+    first_name: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
-    name: Schema.Attribute.Text;
+    last_name: Schema.Attribute.String;
     order_number: Schema.Attribute.Integer & Schema.Attribute.Unique;
     position: Schema.Attribute.Relation<'oneToOne', 'api::position.position'>;
   };
@@ -42,7 +43,7 @@ export interface AboutUsMemberSection extends Struct.ComponentSchema {
   };
   attributes: {
     members: Schema.Attribute.Component<'about-us.leadership', true>;
-    title: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -110,7 +111,10 @@ export interface AboutUsStory extends Struct.ComponentSchema {
     displayName: 'story';
   };
   attributes: {
-    stories: Schema.Attribute.Relation<'oneToMany', 'api::story.story'>;
+    image: Schema.Attribute.Media<'images'>;
+    text: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+    title_slider: Schema.Attribute.String;
   };
 }
 
@@ -124,6 +128,100 @@ export interface AboutUsStorySection extends Struct.ComponentSchema {
     stories: Schema.Attribute.Component<'about-us.story', true>;
     title: Schema.Attribute.Text;
   };
+}
+
+export interface CareerCareerJoinus extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_joinuses';
+  info: {
+    displayName: 'career_joinus';
+  };
+  attributes: {
+    btn_link: Schema.Attribute.String;
+    btn_text: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CareerCareerShowcases extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_showcases';
+  info: {
+    displayName: 'career_showcases';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CareerGrowingTogether extends Struct.ComponentSchema {
+  collectionName: 'components_career_growing_togethers';
+  info: {
+    displayName: 'growing_together';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    growing_together_slide: Schema.Attribute.Component<
+      'career.growing-together-slide',
+      true
+    >;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CareerGrowingTogetherSlide extends Struct.ComponentSchema {
+  collectionName: 'components_career_growing_together_slides';
+  info: {
+    displayName: 'growing_together_slide';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CareerLifeAtIndesso extends Struct.ComponentSchema {
+  collectionName: 'components_career_life_at_indessos';
+  info: {
+    displayName: 'life_at_indesso';
+  };
+  attributes: {
+    career_joinus: Schema.Attribute.Component<'career.career-joinus', false>;
+    career_showcases: Schema.Attribute.Component<
+      'career.career-showcases',
+      true
+    >;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CareerTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_career_testimonials';
+  info: {
+    displayName: 'testimonial';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    quote: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CareerTestimonialData extends Struct.ComponentSchema {
+  collectionName: 'components_career_testimonial_data';
+  info: {
+    displayName: 'testimonial_data';
+  };
+  attributes: {};
 }
 
 export interface FooterFooterMenu extends Struct.ComponentSchema {
@@ -516,6 +614,13 @@ declare module '@strapi/strapi' {
       'about-us.scientific-tab': AboutUsScientificTab;
       'about-us.story': AboutUsStory;
       'about-us.story-section': AboutUsStorySection;
+      'career.career-joinus': CareerCareerJoinus;
+      'career.career-showcases': CareerCareerShowcases;
+      'career.growing-together': CareerGrowingTogether;
+      'career.growing-together-slide': CareerGrowingTogetherSlide;
+      'career.life-at-indesso': CareerLifeAtIndesso;
+      'career.testimonial': CareerTestimonial;
+      'career.testimonial-data': CareerTestimonialData;
       'footer.footer-menu': FooterFooterMenu;
       'home-page.about-us-section': HomePageAboutUsSection;
       'home-page.business-card': HomePageBusinessCard;

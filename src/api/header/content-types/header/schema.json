@@ -27,6 +27,18 @@
         "images"
       ]
     },
+    "logo_fullcolor": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "menus": {
       "type": "component",
       "pluginOptions": {

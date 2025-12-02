@@ -5,10 +5,21 @@
   },
   "options": {},
   "attributes": {
-    "stories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::story.story"
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title_slider": {
+      "type": "string"
     }
   },
   "config": {}
