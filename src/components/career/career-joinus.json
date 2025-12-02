@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_career_career_joinuses",
+  "info": {
+    "displayName": "career_joinus"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "btn_text": {
+      "type": "string"
+    },
+    "btn_link": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

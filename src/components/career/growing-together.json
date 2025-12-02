@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_career_growing_togethers",
+  "info": {
+    "displayName": "growing_together"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "growing_together_slide": {
+      "type": "component",
+      "component": "career.growing-together-slide",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

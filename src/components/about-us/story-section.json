@@ -12,9 +12,9 @@
       "type": "text"
     },
     "stories": {
-      "type": "component",
-      "component": "about-us.story",
-      "repeatable": true
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::story.story"
     }
   },
   "config": {}

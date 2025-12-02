@@ -12,8 +12,11 @@
         "images"
       ]
     },
-    "name": {
-      "type": "text"
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
     },
     "position": {
       "type": "relation",
