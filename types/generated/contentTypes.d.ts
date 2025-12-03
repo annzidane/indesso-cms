@@ -674,6 +674,43 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOurBusinessOurBusiness extends Struct.SingleTypeSchema {
+  collectionName: 'our_businesses';
+  info: {
+    displayName: 'Our Business';
+    pluralName: 'our-businesses';
+    singularName: 'our-business';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-business.our-business'
+    > &
+      Schema.Attribute.Private;
+    page_info: Schema.Attribute.Component<'shared.page-slug', false>;
+    page_section: Schema.Attribute.DynamicZone<
+      [
+        'our-business.business-summary',
+        'our-business.business-appliance',
+        'our-business.our-catalog-card',
+        'our-business.business-botanical-source',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPositionPosition extends Struct.CollectionTypeSchema {
   collectionName: 'positions';
   info: {
@@ -699,6 +736,39 @@ export interface ApiPositionPosition extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.Text;
     order_number: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Struct.CollectionTypeSchema {
+  collectionName: 'products';
+  info: {
+    displayName: 'product';
+    pluralName: 'products';
+    singularName: 'product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image_1: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image_2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product.product'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.Component<'shared.slug', true>;
+    title: Schema.Attribute.Component<'shared.title', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1280,7 +1350,9 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::our-business.our-business': ApiOurBusinessOurBusiness;
       'api::position.position': ApiPositionPosition;
+      'api::product.product': ApiProductProduct;
       'api::story.story': ApiStoryStory;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -348,6 +348,61 @@ export interface HomePageStatsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface OurBusinessBusinessAppliance extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_business_appliances';
+  info: {
+    displayName: 'business_appliance';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessBusinessBotanicalSource
+  extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_business_botanical_sources';
+  info: {
+    displayName: 'business_botanical_source';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessBusinessSummary extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_business_summaries';
+  info: {
+    displayName: 'business_summary';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessOurCatalogCard extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_our_catalog_cards';
+  info: {
+    displayName: 'our-catalog-card';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle: Schema.Attribute.String;
+    text_button: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    url_button: Schema.Attribute.String;
+  };
+}
+
 export interface SharedAccordionItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_accordion_items';
   info: {
@@ -630,6 +685,10 @@ declare module '@strapi/strapi' {
       'home-page.matric-card': HomePageMatricCard;
       'home-page.reason-section': HomePageReasonSection;
       'home-page.stats-card': HomePageStatsCard;
+      'our-business.business-appliance': OurBusinessBusinessAppliance;
+      'our-business.business-botanical-source': OurBusinessBusinessBotanicalSource;
+      'our-business.business-summary': OurBusinessBusinessSummary;
+      'our-business.our-catalog-card': OurBusinessOurCatalogCard;
       'shared.accordion-item': SharedAccordionItem;
       'shared.background': SharedBackground;
       'shared.badge': SharedBadge;

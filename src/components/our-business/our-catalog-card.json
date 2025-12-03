@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_our_business_our_catalog_cards",
+  "info": {
+    "displayName": "our-catalog-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "text_button": {
+      "type": "string"
+    },
+    "url_button": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
