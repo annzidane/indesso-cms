@@ -1,14 +1,14 @@
 {
   "collectionName": "components_career_growing_togethers",
   "info": {
-    "displayName": "growing_together"
+    "displayName": "growing_together_section"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "eyebrow": {
       "type": "string"
     },
-    "subtitle": {
+    "title": {
       "type": "string"
     },
     "description": {

@@ -1,15 +1,18 @@
 {
   "collectionName": "components_career_life_at_indessos",
   "info": {
-    "displayName": "life_at_indesso"
+    "displayName": "life_at_indesso_section"
   },
   "options": {},
   "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
     "title": {
       "type": "string"
     },
-    "subtitle": {
-      "type": "string"
+    "description": {
+      "type": "blocks"
     },
     "image": {
       "type": "media",
@@ -21,18 +24,10 @@
         "audios"
       ]
     },
-    "description": {
-      "type": "text"
-    },
-    "career_showcases": {
+    "career_showcase": {
       "type": "component",
-      "component": "career.career-showcases",
+      "component": "shared.badge",
       "repeatable": true
-    },
-    "career_joinus": {
-      "type": "component",
-      "component": "career.career-joinus",
-      "repeatable": false
     }
   },
   "config": {}

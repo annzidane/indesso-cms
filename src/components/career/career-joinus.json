@@ -1,23 +1,17 @@
 {
   "collectionName": "components_career_career_joinuses",
   "info": {
-    "displayName": "career_joinus"
+    "displayName": "join_us_section"
   },
   "options": {},
   "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
     "title": {
       "type": "string"
     },
-    "subtitle": {
-      "type": "string"
-    },
     "description": {
-      "type": "string"
-    },
-    "btn_text": {
-      "type": "string"
-    },
-    "btn_link": {
       "type": "string"
     },
     "image": {
@@ -29,6 +23,11 @@
         "videos",
         "audios"
       ]
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}

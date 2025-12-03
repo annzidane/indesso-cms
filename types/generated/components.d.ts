@@ -133,26 +133,13 @@ export interface AboutUsStorySection extends Struct.ComponentSchema {
 export interface CareerCareerJoinus extends Struct.ComponentSchema {
   collectionName: 'components_career_career_joinuses';
   info: {
-    displayName: 'career_joinus';
+    displayName: 'join_us_section';
   };
   attributes: {
-    btn_link: Schema.Attribute.String;
-    btn_text: Schema.Attribute.String;
+    button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface CareerCareerShowcases extends Struct.ComponentSchema {
-  collectionName: 'components_career_career_showcases';
-  info: {
-    displayName: 'career_showcases';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -160,15 +147,15 @@ export interface CareerCareerShowcases extends Struct.ComponentSchema {
 export interface CareerGrowingTogether extends Struct.ComponentSchema {
   collectionName: 'components_career_growing_togethers';
   info: {
-    displayName: 'growing_together';
+    displayName: 'growing_together_section';
   };
   attributes: {
     description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
     growing_together_slide: Schema.Attribute.Component<
       'career.growing-together-slide',
       true
     >;
-    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -185,20 +172,26 @@ export interface CareerGrowingTogetherSlide extends Struct.ComponentSchema {
   };
 }
 
+export interface CareerHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_career_hero_sections';
+  info: {
+    displayName: 'hero_section';
+  };
+  attributes: {
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+  };
+}
+
 export interface CareerLifeAtIndesso extends Struct.ComponentSchema {
   collectionName: 'components_career_life_at_indessos';
   info: {
-    displayName: 'life_at_indesso';
+    displayName: 'life_at_indesso_section';
   };
   attributes: {
-    career_joinus: Schema.Attribute.Component<'career.career-joinus', false>;
-    career_showcases: Schema.Attribute.Component<
-      'career.career-showcases',
-      true
-    >;
-    description: Schema.Attribute.Text;
+    career_showcase: Schema.Attribute.Component<'shared.badge', true>;
+    description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -206,12 +199,14 @@ export interface CareerLifeAtIndesso extends Struct.ComponentSchema {
 export interface CareerTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_career_testimonials';
   info: {
-    displayName: 'testimonial';
+    displayName: 'testimonial_section';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    quote: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -414,16 +409,6 @@ export interface SharedAccordionItem extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedBackground extends Struct.ComponentSchema {
-  collectionName: 'components_shared_backgrounds';
-  info: {
-    displayName: 'background';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
 export interface SharedBadge extends Struct.ComponentSchema {
   collectionName: 'components_shared_badges';
   info: {
@@ -456,16 +441,6 @@ export interface SharedCard extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     number: Schema.Attribute.Integer;
     title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedDescription extends Struct.ComponentSchema {
-  collectionName: 'components_shared_descriptions';
-  info: {
-    displayName: 'description';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
   };
 }
 
@@ -528,17 +503,6 @@ export interface SharedLang extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedLogo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_logos';
-  info: {
-    displayName: 'logo';
-    icon: 'crown';
-  };
-  attributes: {
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface SharedMenus extends Struct.ComponentSchema {
   collectionName: 'components_shared_menus';
   info: {
@@ -561,16 +525,6 @@ export interface SharedPageSlug extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedPath extends Struct.ComponentSchema {
-  collectionName: 'components_shared_paths';
-  info: {
-    displayName: 'path';
-  };
-  attributes: {
-    path: Schema.Attribute.String;
   };
 }
 
@@ -623,28 +577,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedSlug extends Struct.ComponentSchema {
-  collectionName: 'components_shared_slugs';
-  info: {
-    displayName: 'slug';
-  };
-  attributes: {
-    slug: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-  };
-}
-
-export interface SharedTitle extends Struct.ComponentSchema {
-  collectionName: 'components_shared_titles';
-  info: {
-    displayName: 'title';
-  };
-  attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface SharedTitleDescription extends Struct.ComponentSchema {
   collectionName: 'components_shared_title_descriptions';
   info: {
@@ -670,9 +602,9 @@ declare module '@strapi/strapi' {
       'about-us.story': AboutUsStory;
       'about-us.story-section': AboutUsStorySection;
       'career.career-joinus': CareerCareerJoinus;
-      'career.career-showcases': CareerCareerShowcases;
       'career.growing-together': CareerGrowingTogether;
       'career.growing-together-slide': CareerGrowingTogetherSlide;
+      'career.hero-section': CareerHeroSection;
       'career.life-at-indesso': CareerLifeAtIndesso;
       'career.testimonial': CareerTestimonial;
       'career.testimonial-data': CareerTestimonialData;
@@ -690,25 +622,19 @@ declare module '@strapi/strapi' {
       'our-business.business-summary': OurBusinessBusinessSummary;
       'our-business.our-catalog-card': OurBusinessOurCatalogCard;
       'shared.accordion-item': SharedAccordionItem;
-      'shared.background': SharedBackground;
       'shared.badge': SharedBadge;
       'shared.button': SharedButton;
       'shared.card': SharedCard;
-      'shared.description': SharedDescription;
       'shared.email': SharedEmail;
       'shared.feature': SharedFeature;
       'shared.hero': SharedHero;
       'shared.keywords': SharedKeywords;
       'shared.lang': SharedLang;
-      'shared.logo': SharedLogo;
       'shared.menus': SharedMenus;
       'shared.page-slug': SharedPageSlug;
-      'shared.path': SharedPath;
       'shared.phone': SharedPhone;
       'shared.reason-card': SharedReasonCard;
       'shared.seo': SharedSeo;
-      'shared.slug': SharedSlug;
-      'shared.title': SharedTitle;
       'shared.title-description': SharedTitleDescription;
     }
   }

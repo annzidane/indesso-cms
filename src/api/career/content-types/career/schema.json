@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "careers",
+  "info": {
+    "singularName": "career",
+    "pluralName": "careers",
+    "displayName": "Career"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "page_sections": {
+      "type": "dynamiczone",
+      "components": [
+        "career.career-joinus",
+        "career.growing-together",
+        "career.life-at-indesso",
+        "career.testimonial",
+        "career.hero-section"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}
