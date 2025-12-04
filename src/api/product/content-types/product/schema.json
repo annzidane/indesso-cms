@@ -12,14 +12,11 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "component",
-      "component": "shared.title",
-      "repeatable": false
+      "type": "string"
     },
     "slug": {
-      "type": "component",
-      "component": "shared.slug",
-      "repeatable": true
+      "type": "uid",
+      "targetField": "title"
     },
     "content": {
       "type": "blocks"
