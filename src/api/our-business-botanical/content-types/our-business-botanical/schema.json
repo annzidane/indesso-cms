@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_business_botanicals",
+  "info": {
+    "singularName": "our-business-botanical",
+    "pluralName": "our-business-botanicals",
+    "displayName": "Our Business: Botanical"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    }
+  }
+}
