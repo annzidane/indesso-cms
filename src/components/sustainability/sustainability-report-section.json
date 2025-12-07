@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sustainability_sustainability_report_sections",
+  "info": {
+    "displayName": "sustainability_report_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "sub_title": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title_report": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -435,7 +435,7 @@ export interface SharedButton extends Struct.ComponentSchema {
 export interface SharedCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_cards';
   info: {
-    displayName: 'card';
+    displayName: 'stats_card';
   };
   attributes: {
     description: Schema.Attribute.Text;
@@ -458,12 +458,25 @@ export interface SharedEmail extends Struct.ComponentSchema {
 export interface SharedFeature extends Struct.ComponentSchema {
   collectionName: 'components_shared_features';
   info: {
-    displayName: 'feature';
+    displayName: 'image_card';
   };
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFeatureSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_feature_sections';
+  info: {
+    displayName: 'feature_section';
+  };
+  attributes: {
+    eyebrow: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    text: Schema.Attribute.Blocks;
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -577,6 +590,17 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStickyNav extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sticky_navs';
+  info: {
+    displayName: 'sticky_nav';
+  };
+  attributes: {
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTitleDescription extends Struct.ComponentSchema {
   collectionName: 'components_shared_title_descriptions';
   info: {
@@ -585,6 +609,102 @@ export interface SharedTitleDescription extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SustainabilityAssesstmentsCard extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_assesstments_cards';
+  info: {
+    displayName: 'assesstments_card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SustainabilityCommitmentSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_commitment_sections';
+  info: {
+    displayName: 'commitment_section';
+  };
+  attributes: {
+    assessments_card: Schema.Attribute.Component<
+      'sustainability.assesstments-card',
+      true
+    >;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SustainabilityHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_hero_sections';
+  info: {
+    displayName: 'hero_section';
+  };
+  attributes: {
+    hero: Schema.Attribute.Component<'shared.hero', false>;
+  };
+}
+
+export interface SustainabilityResponsibleOperationsSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_responsible_operations_sections';
+  info: {
+    displayName: 'responsible_operations_section';
+  };
+  attributes: {
+    card_image: Schema.Attribute.Component<'shared.feature', true>;
+    description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SustainabilitySustainabilityInitiativeSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_sustainability_initiative_sections';
+  info: {
+    displayName: 'sustainability_initiative_section';
+  };
+  attributes: {
+    card_image: Schema.Attribute.Component<'shared.feature', true>;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SustainabilitySustainabilityReportSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_sustainability_report_sections';
+  info: {
+    displayName: 'sustainability_report_section';
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    sub_title: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+    title_report: Schema.Attribute.String;
+  };
+}
+
+export interface SustainabilitySustainabilityStrategySection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_sustainability_strategy_sections';
+  info: {
+    displayName: 'sustainability_strategy_section';
+  };
+  attributes: {
+    accordion_items: Schema.Attribute.Component<'shared.accordion-item', true>;
+    feature: Schema.Attribute.Component<'shared.feature-section', false>;
   };
 }
 
@@ -627,6 +747,7 @@ declare module '@strapi/strapi' {
       'shared.card': SharedCard;
       'shared.email': SharedEmail;
       'shared.feature': SharedFeature;
+      'shared.feature-section': SharedFeatureSection;
       'shared.hero': SharedHero;
       'shared.keywords': SharedKeywords;
       'shared.lang': SharedLang;
@@ -635,7 +756,15 @@ declare module '@strapi/strapi' {
       'shared.phone': SharedPhone;
       'shared.reason-card': SharedReasonCard;
       'shared.seo': SharedSeo;
+      'shared.sticky-nav': SharedStickyNav;
       'shared.title-description': SharedTitleDescription;
+      'sustainability.assesstments-card': SustainabilityAssesstmentsCard;
+      'sustainability.commitment-section': SustainabilityCommitmentSection;
+      'sustainability.hero-section': SustainabilityHeroSection;
+      'sustainability.responsible-operations-section': SustainabilityResponsibleOperationsSection;
+      'sustainability.sustainability-initiative-section': SustainabilitySustainabilityInitiativeSection;
+      'sustainability.sustainability-report-section': SustainabilitySustainabilityReportSection;
+      'sustainability.sustainability-strategy-section': SustainabilitySustainabilityStrategySection;
     }
   }
 }

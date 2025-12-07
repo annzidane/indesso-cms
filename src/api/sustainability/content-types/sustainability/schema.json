@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "sustainabilities",
+  "info": {
+    "singularName": "sustainability",
+    "pluralName": "sustainabilities",
+    "displayName": "Sustainability"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "page_sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sustainability.sustainability-strategy-section",
+        "sustainability.sustainability-report-section",
+        "sustainability.sustainability-initiative-section",
+        "sustainability.responsible-operations-section",
+        "sustainability.commitment-section",
+        "sustainability.hero-section"
+      ]
+    }
+  }
+}

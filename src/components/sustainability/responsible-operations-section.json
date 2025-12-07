@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sustainability_responsible_operations_sections",
+  "info": {
+    "displayName": "responsible_operations_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "card_image": {
+      "type": "component",
+      "component": "shared.feature",
+      "repeatable": true
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

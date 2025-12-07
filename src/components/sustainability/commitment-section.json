@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sustainability_commitment_sections",
+  "info": {
+    "displayName": "commitment_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "assessments_card": {
+      "type": "component",
+      "component": "sustainability.assesstments-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
