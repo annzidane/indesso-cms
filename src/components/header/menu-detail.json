@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_header_menu_details",
+  "info": {
+    "displayName": "menu_detail"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

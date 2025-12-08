@@ -483,19 +483,56 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::banner.banner'
     > &
       Schema.Attribute.Private;
-    order_number: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    order_number: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBotanicalBotanical extends Struct.CollectionTypeSchema {
+  collectionName: 'botanicals';
+  info: {
+    displayName: 'Botanical';
+    pluralName: 'botanicals';
+    singularName: 'botanical';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image_1: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image_2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::botanical.botanical'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    shortname: Schema.Attribute.String;
+    slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -643,7 +680,7 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
-    menus: Schema.Attribute.Component<'shared.menus', true> &
+    menus: Schema.Attribute.Component<'header.menu-header', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -706,6 +743,35 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurBusinessBotanicalOurBusinessBotanical
+  extends Struct.SingleTypeSchema {
+  collectionName: 'our_business_botanicals';
+  info: {
+    displayName: 'Our Business: Botanical';
+    pluralName: 'our-business-botanicals';
+    singularName: 'our-business-botanical';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-business-botanical.our-business-botanical'
+    > &
+      Schema.Attribute.Private;
+    page_info: Schema.Attribute.Component<'shared.page-slug', false>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -780,10 +846,39 @@ export interface ApiPositionPosition extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProductTypeProductType extends Struct.CollectionTypeSchema {
+  collectionName: 'product_types';
+  info: {
+    displayName: 'Product Type';
+    pluralName: 'product-types';
+    singularName: 'product-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-type.product-type'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
-    displayName: 'product';
+    displayName: 'Product';
     pluralName: 'products';
     singularName: 'product';
   };
@@ -791,22 +886,35 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Blocks;
+    botanical: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::botanical.botanical'
+    >;
+    cas_number: Schema.Attribute.String;
+    certification: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image_1: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    image_2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ec_number: Schema.Attribute.String;
+    fema_number: Schema.Attribute.String;
+    inci_name: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product.product'
     > &
       Schema.Attribute.Private;
+    moq: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    organoleptic: Schema.Attribute.Text;
+    packaging_size: Schema.Attribute.Text;
+    product_format: Schema.Attribute.String;
+    product_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::product-type.product-type'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    shelf_life: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1491,12 +1599,15 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::banner.banner': ApiBannerBanner;
+      'api::botanical.botanical': ApiBotanicalBotanical;
       'api::career.career': ApiCareerCareer;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::our-business-botanical.our-business-botanical': ApiOurBusinessBotanicalOurBusinessBotanical;
       'api::our-business.our-business': ApiOurBusinessOurBusiness;
       'api::position.position': ApiPositionPosition;
+      'api::product-type.product-type': ApiProductTypeProductType;
       'api::product.product': ApiProductProduct;
       'api::report.report': ApiReportReport;
       'api::story.story': ApiStoryStory;

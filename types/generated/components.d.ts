@@ -231,6 +231,34 @@ export interface FooterFooterMenu extends Struct.ComponentSchema {
   };
 }
 
+export interface HeaderMenuDetail extends Struct.ComponentSchema {
+  collectionName: 'components_header_menu_details';
+  info: {
+    displayName: 'menu_detail';
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HeaderMenuHeader extends Struct.ComponentSchema {
+  collectionName: 'components_header_menu_headers';
+  info: {
+    displayName: 'menu_header';
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    menu_detail: Schema.Attribute.Component<'header.menu-detail', true>;
+    path: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface HomePageAboutUsSection extends Struct.ComponentSchema {
   collectionName: 'components_home_page_about_us_sections';
   info: {
@@ -729,6 +757,8 @@ declare module '@strapi/strapi' {
       'career.testimonial': CareerTestimonial;
       'career.testimonial-data': CareerTestimonialData;
       'footer.footer-menu': FooterFooterMenu;
+      'header.menu-detail': HeaderMenuDetail;
+      'header.menu-header': HeaderMenuHeader;
       'home-page.about-us-section': HomePageAboutUsSection;
       'home-page.business-card': HomePageBusinessCard;
       'home-page.business-section': HomePageBusinessSection;

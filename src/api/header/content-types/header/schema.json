@@ -39,16 +39,6 @@
         "images"
       ]
     },
-    "menus": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.menus",
-      "repeatable": true
-    },
     "lang": {
       "type": "component",
       "pluginOptions": {
@@ -57,6 +47,16 @@
         }
       },
       "component": "shared.lang",
+      "repeatable": true
+    },
+    "menus": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "header.menu-header",
       "repeatable": true
     }
   }

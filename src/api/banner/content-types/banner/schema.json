@@ -18,6 +18,7 @@
     "image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -26,6 +27,7 @@
     },
     "order_number": {
       "type": "integer",
+      "required": true,
       "unique": true
     }
   }
