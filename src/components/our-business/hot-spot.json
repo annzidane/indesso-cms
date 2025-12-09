@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_our_business_hot_spots",
+  "info": {
+    "displayName": "hot_spot"
+  },
+  "options": {},
+  "attributes": {
+    "feature_title": {
+      "type": "string",
+      "required": true
+    },
+    "feature_desc": {
+      "type": "text",
+      "required": true
+    },
+    "feature_icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

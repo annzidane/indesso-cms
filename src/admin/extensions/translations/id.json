@@ -1,4 +1,5 @@
 {
+  "global.localeToggle.label": "Bahasa",
   "content-manager.plugin.name": "Pengelola Konten",
   "content-manager.plugin.description": "Kelola konten Anda dengan mudah",
   "upload.plugin.name": "Pustaka Media",
@@ -581,6 +582,8 @@
   "app.utils.add-filter": "Tambahkan filter",
   "app.utils.filters": "Filter",
   "app.utils.defaultMessage": " ",
-  "app.utils.placeholder.defaultMessage": " "
+  "app.utils.placeholder.defaultMessage": " ",
+
+  "components.Select.placeholder": "Pilih opsi"
 }
 

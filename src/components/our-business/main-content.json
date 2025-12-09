@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_our_business_main_contents",
+  "info": {
+    "displayName": "main_content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

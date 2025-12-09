@@ -24,9 +24,6 @@
         "commissioner",
         "director"
       ]
-    },
-    "order_number": {
-      "type": "integer"
     }
   }
 }

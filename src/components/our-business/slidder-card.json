@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_our_business_slidder_cards",
+  "info": {
+    "displayName": "slidder_card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "subsidiary_text": {
+      "type": "text"
+    },
+    "partner_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "hot_spot": {
+      "type": "component",
+      "component": "our-business.hot-spot",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

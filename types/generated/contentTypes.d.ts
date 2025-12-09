@@ -528,11 +528,12 @@ export interface ApiBotanicalBotanical extends Struct.CollectionTypeSchema {
       'api::botanical.botanical'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
+    scientific_name: Schema.Attribute.String & Schema.Attribute.Required;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    shortname: Schema.Attribute.String;
-    slug: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -749,6 +750,71 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIndustryCategoryIndustryCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'industry_categories';
+  info: {
+    displayName: 'Industry Category';
+    pluralName: 'industry-categories';
+    singularName: 'industry-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industry-category.industry-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOrganolepticOrganoleptic
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'organoleptics';
+  info: {
+    displayName: 'Organoleptic';
+    pluralName: 'organoleptics';
+    singularName: 'organoleptic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organoleptic.organoleptic'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOurBusinessBotanicalOurBusinessBotanical
   extends Struct.SingleTypeSchema {
   collectionName: 'our_business_botanicals';
@@ -792,6 +858,7 @@ export interface ApiOurBusinessOurBusiness extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    hero_section: Schema.Attribute.Component<'shared.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -799,16 +866,8 @@ export interface ApiOurBusinessOurBusiness extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     page_info: Schema.Attribute.Component<'shared.page-slug', false>;
-    page_section: Schema.Attribute.DynamicZone<
-      [
-        'our-business.business-summary',
-        'our-business.business-appliance',
-        'our-business.our-catalog-card',
-        'our-business.business-botanical-source',
-      ]
-    >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    sticky_nav: Schema.Attribute.Component<'our-business.sticky-nav', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -838,7 +897,6 @@ export interface ApiPositionPosition extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.Text;
-    order_number: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -846,12 +904,44 @@ export interface ApiPositionPosition extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiProductTypeProductType extends Struct.CollectionTypeSchema {
-  collectionName: 'product_types';
+export interface ApiProductFormatProductFormat
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_formats';
   info: {
-    displayName: 'Product Type';
-    pluralName: 'product-types';
-    singularName: 'product-type';
+    displayName: 'Product Format';
+    pluralName: 'product-formats';
+    singularName: 'product-format';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-format.product-format'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductSubCategoryProductSubCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_sub_categories';
+  info: {
+    displayName: 'Product Sub Category';
+    pluralName: 'product-sub-categories';
+    singularName: 'product-sub-category';
   };
   options: {
     draftAndPublish: true;
@@ -863,12 +953,55 @@ export interface ApiProductTypeProductType extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
+      'api::product-sub-category.product-sub-category'
+    > &
+      Schema.Attribute.Private;
+    page_sections: Schema.Attribute.DynamicZone<
+      [
+        'our-business.our-catalog-section',
+        'our-business.business-summary-section',
+        'our-business.business-appliance-section',
+        'our-business.botanical-source-section',
+      ]
+    >;
+    product_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-type.product-type'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductTypeProductType extends Struct.CollectionTypeSchema {
+  collectionName: 'product_types';
+  info: {
+    displayName: 'Product Category';
+    pluralName: 'product-types';
+    singularName: 'product-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
       'api::product-type.product-type'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -887,34 +1020,42 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     botanical: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::botanical.botanical'
     >;
-    cas_number: Schema.Attribute.String;
-    certification: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ec_number: Schema.Attribute.String;
-    fema_number: Schema.Attribute.String;
-    inci_name: Schema.Attribute.String;
+    general_information: Schema.Attribute.Component<
+      'our-business.general-information',
+      false
+    >;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    industry_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::industry-category.industry-category'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product.product'
     > &
       Schema.Attribute.Private;
-    moq: Schema.Attribute.String;
-    name: Schema.Attribute.String;
-    organoleptic: Schema.Attribute.Text;
-    packaging_size: Schema.Attribute.Text;
-    product_format: Schema.Attribute.String;
-    product_type: Schema.Attribute.Relation<
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    organoleptics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organoleptic.organoleptic'
+    >;
+    product_category: Schema.Attribute.Relation<
       'oneToOne',
       'api::product-type.product-type'
     >;
+    product_format: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::product-format.product-format'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    shelf_life: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1604,9 +1745,13 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::industry-category.industry-category': ApiIndustryCategoryIndustryCategory;
+      'api::organoleptic.organoleptic': ApiOrganolepticOrganoleptic;
       'api::our-business-botanical.our-business-botanical': ApiOurBusinessBotanicalOurBusinessBotanical;
       'api::our-business.our-business': ApiOurBusinessOurBusiness;
       'api::position.position': ApiPositionPosition;
+      'api::product-format.product-format': ApiProductFormatProductFormat;
+      'api::product-sub-category.product-sub-category': ApiProductSubCategoryProductSubCategory;
       'api::product-type.product-type': ApiProductTypeProductType;
       'api::product.product': ApiProductProduct;
       'api::report.report': ApiReportReport;

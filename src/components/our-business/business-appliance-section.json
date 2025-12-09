@@ -1,22 +1,24 @@
 {
-  "collectionName": "components_our_business_business_summaries",
+  "collectionName": "components_our_business_business_appliance_sections",
   "info": {
-    "displayName": "business_summary"
+    "displayName": "business_appliance_sections"
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "eyebrow": {
+      "type": "string",
+      "required": true
     },
-    "subtitle": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "text"
     },
     "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_our_business_botanical_source_sections",
+  "info": {
+    "displayName": "botanical_source_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

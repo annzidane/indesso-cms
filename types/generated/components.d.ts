@@ -371,58 +371,138 @@ export interface HomePageStatsCard extends Struct.ComponentSchema {
   };
 }
 
-export interface OurBusinessBusinessAppliance extends Struct.ComponentSchema {
-  collectionName: 'components_our_business_business_appliances';
-  info: {
-    displayName: 'business_appliance';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface OurBusinessBusinessBotanicalSource
+export interface OurBusinessBotanicalSourceSection
   extends Struct.ComponentSchema {
-  collectionName: 'components_our_business_business_botanical_sources';
+  collectionName: 'components_our_business_botanical_source_sections';
   info: {
-    displayName: 'business_botanical_source';
+    displayName: 'botanical_source_section';
   };
   attributes: {
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface OurBusinessBusinessSummary extends Struct.ComponentSchema {
-  collectionName: 'components_our_business_business_summaries';
+export interface OurBusinessBusinessApplianceSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_business_appliance_sections';
   info: {
-    displayName: 'business_summary';
+    displayName: 'business_appliance_sections';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
+    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessBusinessSummarySection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_business_summary_sectio';
+  info: {
+    displayName: 'business_summary_section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    slidder: Schema.Attribute.Component<'our-business.slidder-card', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessCertification extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_certifications';
+  info: {
+    displayName: 'certification';
+  };
+  attributes: {
+    certificate: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessGeneralInformation extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_general_informations';
+  info: {
+    displayName: 'general_information';
+  };
+  attributes: {
+    cas_number: Schema.Attribute.String;
+    certification: Schema.Attribute.Component<
+      'our-business.certification',
       true
     >;
-    subtitle: Schema.Attribute.String;
+    ec_number: Schema.Attribute.String;
+    fema_number: Schema.Attribute.String;
+    inci_name: Schema.Attribute.String;
+    moq: Schema.Attribute.String;
+    packaging_size: Schema.Attribute.Component<'shared.title', true>;
+    shelf_life: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessHotSpot extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_hot_spots';
+  info: {
+    displayName: 'hot_spot';
+  };
+  attributes: {
+    feature_desc: Schema.Attribute.Text & Schema.Attribute.Required;
+    feature_icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    feature_title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessMainContent extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_main_contents';
+  info: {
+    displayName: 'main_content';
+  };
+  attributes: {
     title: Schema.Attribute.String;
   };
 }
 
-export interface OurBusinessOurCatalogCard extends Struct.ComponentSchema {
-  collectionName: 'components_our_business_our_catalog_cards';
+export interface OurBusinessOurCatalogSection extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_our_catalog_sections';
   info: {
-    displayName: 'our-catalog-card';
+    displayName: 'our-catalog-section';
   };
   attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    subtitle: Schema.Attribute.String;
-    text_button: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    url_button: Schema.Attribute.String;
+    text: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessSlidderCard extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_slidder_cards';
+  info: {
+    displayName: 'slidder_card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    hot_spot: Schema.Attribute.Component<'our-business.hot-spot', false>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    partner_logo: Schema.Attribute.Media<'images' | 'files'>;
+    subsidiary_text: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessStickyNav extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_sticky_navs';
+  info: {
+    displayName: 'sticky_nav';
+  };
+  attributes: {
+    product_sub_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-sub-category.product-sub-category'
+    >;
   };
 }
 
@@ -555,6 +635,14 @@ export interface SharedMenus extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPackagingSize extends Struct.ComponentSchema {
+  collectionName: 'components_shared_packaging_sizes';
+  info: {
+    displayName: 'packaging_size';
+  };
+  attributes: {};
+}
+
 export interface SharedPageSlug extends Struct.ComponentSchema {
   collectionName: 'components_shared_page_slugs';
   info: {
@@ -626,6 +714,16 @@ export interface SharedStickyNav extends Struct.ComponentSchema {
   attributes: {
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTitle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_titles';
+  info: {
+    displayName: 'title';
+  };
+  attributes: {
+    size: Schema.Attribute.String;
   };
 }
 
@@ -767,10 +865,16 @@ declare module '@strapi/strapi' {
       'home-page.matric-card': HomePageMatricCard;
       'home-page.reason-section': HomePageReasonSection;
       'home-page.stats-card': HomePageStatsCard;
-      'our-business.business-appliance': OurBusinessBusinessAppliance;
-      'our-business.business-botanical-source': OurBusinessBusinessBotanicalSource;
-      'our-business.business-summary': OurBusinessBusinessSummary;
-      'our-business.our-catalog-card': OurBusinessOurCatalogCard;
+      'our-business.botanical-source-section': OurBusinessBotanicalSourceSection;
+      'our-business.business-appliance-section': OurBusinessBusinessApplianceSection;
+      'our-business.business-summary-section': OurBusinessBusinessSummarySection;
+      'our-business.certification': OurBusinessCertification;
+      'our-business.general-information': OurBusinessGeneralInformation;
+      'our-business.hot-spot': OurBusinessHotSpot;
+      'our-business.main-content': OurBusinessMainContent;
+      'our-business.our-catalog-section': OurBusinessOurCatalogSection;
+      'our-business.slidder-card': OurBusinessSlidderCard;
+      'our-business.sticky-nav': OurBusinessStickyNav;
       'shared.accordion-item': SharedAccordionItem;
       'shared.badge': SharedBadge;
       'shared.button': SharedButton;
@@ -782,11 +886,13 @@ declare module '@strapi/strapi' {
       'shared.keywords': SharedKeywords;
       'shared.lang': SharedLang;
       'shared.menus': SharedMenus;
+      'shared.packaging-size': SharedPackagingSize;
       'shared.page-slug': SharedPageSlug;
       'shared.phone': SharedPhone;
       'shared.reason-card': SharedReasonCard;
       'shared.seo': SharedSeo;
       'shared.sticky-nav': SharedStickyNav;
+      'shared.title': SharedTitle;
       'shared.title-description': SharedTitleDescription;
       'sustainability.assesstments-card': SustainabilityAssesstmentsCard;
       'sustainability.commitment-section': SustainabilityCommitmentSection;

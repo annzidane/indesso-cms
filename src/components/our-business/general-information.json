@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_our_business_general_informations",
+  "info": {
+    "displayName": "general_information"
+  },
+  "options": {},
+  "attributes": {
+    "cas_number": {
+      "type": "string"
+    },
+    "certification": {
+      "type": "component",
+      "component": "our-business.certification",
+      "repeatable": true
+    },
+    "inci_name": {
+      "type": "string"
+    },
+    "moq": {
+      "type": "string"
+    },
+    "ec_number": {
+      "type": "string"
+    },
+    "shelf_life": {
+      "type": "string"
+    },
+    "fema_number": {
+      "type": "string"
+    },
+    "packaging_size": {
+      "type": "component",
+      "component": "shared.title",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

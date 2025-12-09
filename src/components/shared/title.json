@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_titles",
+  "info": {
+    "displayName": "title"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

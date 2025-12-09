@@ -12,47 +12,50 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "product_type": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "product_category": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product-type.product-type"
     },
     "botanical": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::botanical.botanical"
+      "relation": "manyToOne",
+      "target": "api::botanical.botanical",
+      "inversedBy": "products"
     },
-    "organoleptic": {
-      "type": "text"
+    "organoleptics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::organoleptic.organoleptic",
+      "mappedBy": "product"
     },
     "product_format": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-format.product-format"
     },
-    "cas_number": {
-      "type": "string"
+    "industry_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industry-category.industry-category",
+      "mappedBy": "products"
     },
-    "certification": {
-      "type": "string"
-    },
-    "inci_name": {
-      "type": "string"
-    },
-    "moq": {
-      "type": "string"
-    },
-    "ec_number": {
-      "type": "string"
-    },
-    "shelf_life": {
-      "type": "string"
-    },
-    "fema_number": {
-      "type": "string"
-    },
-    "packaging_size": {
-      "type": "text"
+    "general_information": {
+      "type": "component",
+      "component": "our-business.general-information",
+      "repeatable": false
     }
   }
 }

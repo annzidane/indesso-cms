@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organoleptics",
+  "info": {
+    "singularName": "organoleptic",
+    "pluralName": "organoleptics",
+    "displayName": "Organoleptic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "organoleptics"
+    }
+  }
+}

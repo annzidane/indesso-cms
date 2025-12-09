@@ -16,18 +16,14 @@
       "component": "shared.page-slug",
       "repeatable": false
     },
-    "page_section": {
-      "type": "dynamiczone",
-      "components": [
-        "our-business.business-summary",
-        "our-business.business-appliance",
-        "our-business.our-catalog-card",
-        "our-business.business-botanical-source"
-      ]
-    },
-    "seo": {
+    "hero_section": {
       "type": "component",
-      "component": "shared.seo",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "sticky_nav": {
+      "type": "component",
+      "component": "our-business.sticky-nav",
       "repeatable": false
     }
   }

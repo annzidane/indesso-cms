@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_our_business_sticky_navs",
+  "info": {
+    "displayName": "sticky_nav"
+  },
+  "options": {},
+  "attributes": {
+    "product_sub_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-sub-category.product-sub-category"
+    }
+  },
+  "config": {}
+}

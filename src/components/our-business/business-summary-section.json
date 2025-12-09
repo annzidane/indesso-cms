@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_our_business_business_summary_sectio",
+  "info": {
+    "displayName": "business_summary_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slidder": {
+      "type": "component",
+      "component": "our-business.slidder-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

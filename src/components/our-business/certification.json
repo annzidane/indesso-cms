@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_our_business_certifications",
+  "info": {
+    "displayName": "certification"
+  },
+  "options": {},
+  "attributes": {
+    "certificate": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -11,14 +11,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slug": {
-      "type": "string"
-    },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "shortname": {
-      "type": "string"
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "scientific_name": {
+      "type": "string",
+      "required": true
     },
     "content": {
       "type": "blocks"
@@ -47,6 +51,12 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "botanical"
     }
   }
 }
