@@ -488,7 +488,7 @@ export interface OurBusinessSlidderCard extends Struct.ComponentSchema {
     hot_spot: Schema.Attribute.Component<'our-business.hot-spot', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     partner_logo: Schema.Attribute.Media<'images' | 'files'>;
-    subsidiary_text: Schema.Attribute.Text;
+    Subsidiary_text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

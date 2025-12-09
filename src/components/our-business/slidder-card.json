@@ -21,8 +21,8 @@
         "images"
       ]
     },
-    "subsidiary_text": {
-      "type": "text"
+    "Subsidiary_text": {
+      "type": "blocks"
     },
     "partner_logo": {
       "type": "media",
