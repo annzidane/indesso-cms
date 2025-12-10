@@ -23,6 +23,14 @@
         "audios"
       ]
     },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "text": {
       "type": "blocks"
     },

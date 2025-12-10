@@ -470,6 +470,8 @@ export interface OurBusinessOurCatalogSection extends Struct.ComponentSchema {
     displayName: 'our-catalog-section';
   };
   attributes: {
+    background_image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
     button: Schema.Attribute.Component<'shared.button', false>;
     eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
