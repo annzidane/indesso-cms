@@ -14,6 +14,7 @@ export default ({ env }) => [
             'blob:',
             `${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
             `http://${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
+            'https://s3-local.deptechdigital.com',
           ],
           'media-src': [
             "'self'",
@@ -21,6 +22,7 @@ export default ({ env }) => [
             'blob:',
             `${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
             `http://${env('MINIO_ENDPOINT')}:${env('MINIO_PORT')}`,
+            'https://s3-local.deptechdigital.com',
           ],
           upgradeInsecureRequests: null,
         },

@@ -1,18 +1,17 @@
 export default ({ env }) => ({
-  // Upload provider - MinIO
+  // Upload provider - MinIO with CDN support via overridePath
   upload: {
     config: {
-      provider: 'strapi-provider-upload-minio-ce',
+      provider: 'strapi-provider-upload-tp-minio',
       providerOptions: {
         accessKey: env('MINIO_ACCESS_KEY'),
         secretKey: env('MINIO_SECRET_KEY'),
         bucket: env('MINIO_BUCKET'),
         endPoint: env('MINIO_ENDPOINT'),
         port: parseInt(env('MINIO_PORT', '9000')),
-        useSSL: env('MINIO_USE_SSL', 'false') === 'true',
+        useSSL: false,
         folder: '',
-        isDocker: false,
-        host: env('MINIO_CDN_URL'),
+        overridePath: env('MINIO_CDN_URL'),
       },
     },
   },

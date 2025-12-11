@@ -28,6 +28,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "strapi-provider-upload-minio-ce": "^1.2.0",
+    "strapi-provider-upload-tp-minio": "^3.1.0",
     "strapi-v5-plugin-populate-deep": "^4.0.5",
     "styled-components": "^6.0.0"
   },
