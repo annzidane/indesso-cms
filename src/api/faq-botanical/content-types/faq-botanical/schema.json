@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faq_botanicals",
+  "info": {
+    "singularName": "faq-botanical",
+    "pluralName": "faq-botanicals",
+    "displayName": "OB - FAQ Botanical"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "quesion": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "answer": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "botanical": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::botanical.botanical"
+    }
+  }
+}

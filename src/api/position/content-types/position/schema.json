@@ -12,11 +12,13 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "code": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     },
     "group": {
       "type": "enumeration",

@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_business_product_details",
+  "info": {
+    "singularName": "our-business-product-detail",
+    "pluralName": "our-business-product-details",
+    "displayName": "Our Business: Product Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "page_sections": {
+      "type": "dynamiczone",
+      "components": [
+        "our-business.list-product-section",
+        "our-business.contact-us-section",
+        "our-business.product-detail-section"
+      ]
+    }
+  }
+}

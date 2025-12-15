@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_business_catalogs",
+  "info": {
+    "singularName": "our-business-catalog",
+    "pluralName": "our-business-catalogs",
+    "displayName": "Our Business: Catalog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "hero_section": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.hero",
+      "repeatable": false
+    }
+  }
+}

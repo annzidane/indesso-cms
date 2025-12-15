@@ -6,14 +6,19 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     },
     "card_image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -21,15 +26,20 @@
     "ingredient_image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "title_button": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "path": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

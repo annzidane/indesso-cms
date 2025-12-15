@@ -8,22 +8,30 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "title_employee": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description_employee": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     },
     "title_people": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description_people": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

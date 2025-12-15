@@ -12,11 +12,13 @@
   "pluginOptions": {},
   "attributes": {
     "year": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     },
     "file": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",

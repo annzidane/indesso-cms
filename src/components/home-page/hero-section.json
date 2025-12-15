@@ -6,7 +6,9 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "button": {
       "type": "component",
@@ -14,7 +16,8 @@
       "repeatable": false
     },
     "title_badge": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "description_badge": {
       "type": "text"

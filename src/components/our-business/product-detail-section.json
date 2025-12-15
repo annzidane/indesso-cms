@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_our_business_product_detail_sections",
+  "info": {
+    "displayName": "product_detail_section"
+  },
+  "options": {},
+  "attributes": {
+    "title_botanical": {
+      "type": "string"
+    },
+    "title_organoleptic": {
+      "type": "string"
+    },
+    "title_format": {
+      "type": "string"
+    },
+    "general_information_label": {
+      "type": "component",
+      "component": "our-business.general-information-title",
+      "repeatable": false
+    },
+    "title_application": {
+      "type": "string"
+    },
+    "description_application": {
+      "type": "text"
+    },
+    "title_accordion": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

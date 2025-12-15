@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_our_business_contact_us_sections",
+  "info": {
+    "displayName": "contact_us_section"
+  },
+  "options": {},
+  "attributes": {
+    "contact_us_section": {
+      "type": "component",
+      "component": "shared.contact-us",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

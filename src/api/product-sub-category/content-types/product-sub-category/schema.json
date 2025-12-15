@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product-sub-category",
     "pluralName": "product-sub-categories",
-    "displayName": "Product Sub Category"
+    "displayName": "OB - Product Sub Category"
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +17,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "product_categories": {
       "type": "relation",

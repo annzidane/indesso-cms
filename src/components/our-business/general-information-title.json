@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_our_business_general_information_titles",
+  "info": {
+    "displayName": "general_information_title"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cas_label": {
+      "type": "string"
+    },
+    "certification_label": {
+      "type": "string"
+    },
+    "inci_label": {
+      "type": "string"
+    },
+    "moq_label": {
+      "type": "string"
+    },
+    "ec_label": {
+      "type": "string"
+    },
+    "shelf_life_label": {
+      "type": "string"
+    },
+    "fema_label": {
+      "type": "string"
+    },
+    "packaging_label": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

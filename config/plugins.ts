@@ -13,6 +13,13 @@ export default ({ env }) => ({
         folder: '',
         overridePath: env('MINIO_CDN_URL'),
       },
+      sizeLimit: 100 * 1024 * 1024, // 100 MB untuk video (max global)
+      breakpoints: {
+        large: 1000,
+        medium: 750,
+        small: 500,
+        thumbnail: 156,
+      },
     },
   },
   // Email provider

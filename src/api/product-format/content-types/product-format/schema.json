@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product-format",
     "pluralName": "product-formats",
-    "displayName": "Product Format"
+    "displayName": "OB - Product Format"
   },
   "options": {
     "draftAndPublish": true

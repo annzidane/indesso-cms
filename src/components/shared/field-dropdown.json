@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_field_dropdowns",
+  "info": {
+    "displayName": "field_dropdown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "option": {
+      "type": "component",
+      "component": "shared.title",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

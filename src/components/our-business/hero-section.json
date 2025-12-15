@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_our_business_hero_sections",
+  "info": {
+    "displayName": "hero_section"
+  },
+  "options": {},
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

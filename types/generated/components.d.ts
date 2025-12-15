@@ -269,9 +269,17 @@ export interface HomePageAboutUsSection extends Struct.ComponentSchema {
     button: Schema.Attribute.Component<'shared.button', false>;
     card: Schema.Attribute.Component<'shared.card', false>;
     feature_image: Schema.Attribute.Media<'images'>;
-    main_title: Schema.Attribute.Text;
+    main_title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     text: Schema.Attribute.Blocks;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -281,12 +289,29 @@ export interface HomePageBusinessCard extends Struct.ComponentSchema {
     displayName: 'business_card';
   };
   attributes: {
-    card_image: Schema.Attribute.Media<'images'>;
-    description: Schema.Attribute.Text;
-    ingredient_image: Schema.Attribute.Media<'images'>;
-    path: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    title_button: Schema.Attribute.String;
+    card_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    ingredient_image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -297,8 +322,16 @@ export interface HomePageBusinessSection extends Struct.ComponentSchema {
   };
   attributes: {
     business_card: Schema.Attribute.Component<'home-page.business-card', true>;
-    main_title: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
+    main_title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -311,8 +344,15 @@ export interface HomePageHeroSection extends Struct.ComponentSchema {
     button: Schema.Attribute.Component<'shared.button', false>;
     description_badge: Schema.Attribute.Text;
     image_badge: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String;
-    title_badge: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_badge: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -322,11 +362,30 @@ export interface HomePageImpactCard extends Struct.ComponentSchema {
     displayName: 'impact_card';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
-    number: Schema.Attribute.Integer;
-    opener: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    number: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
+    opener: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -336,11 +395,27 @@ export interface HomePageMatricCard extends Struct.ComponentSchema {
     displayName: 'matric_card';
   };
   attributes: {
-    description_employee: Schema.Attribute.Text;
-    description_people: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
-    title_employee: Schema.Attribute.String;
-    title_people: Schema.Attribute.String;
+    description_employee: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    description_people: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title_employee: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_people: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -352,10 +427,18 @@ export interface HomePageReasonSection extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     impact_card: Schema.Attribute.Component<'home-page.impact-card', false>;
-    main_title: Schema.Attribute.String;
+    main_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     matric_card: Schema.Attribute.Component<'home-page.matric-card', false>;
     statistic_card: Schema.Attribute.Component<'home-page.stats-card', true>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -365,9 +448,17 @@ export interface HomePageStatsCard extends Struct.ComponentSchema {
     displayName: 'stats_card';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -422,6 +513,27 @@ export interface OurBusinessCertification extends Struct.ComponentSchema {
   };
 }
 
+export interface OurBusinessContactUsSection extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_contact_us_sections';
+  info: {
+    displayName: 'contact_us_section';
+  };
+  attributes: {
+    contact_us_section: Schema.Attribute.Component<'shared.contact-us', false>;
+  };
+}
+
+export interface OurBusinessFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_faq_sections';
+  info: {
+    displayName: 'faq_section';
+  };
+  attributes: {
+    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface OurBusinessGeneralInformation extends Struct.ComponentSchema {
   collectionName: 'components_our_business_general_informations';
   info: {
@@ -442,6 +554,35 @@ export interface OurBusinessGeneralInformation extends Struct.ComponentSchema {
   };
 }
 
+export interface OurBusinessGeneralInformationTitle
+  extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_general_information_titles';
+  info: {
+    displayName: 'general_information_title';
+  };
+  attributes: {
+    cas_label: Schema.Attribute.String;
+    certification_label: Schema.Attribute.String;
+    ec_label: Schema.Attribute.String;
+    fema_label: Schema.Attribute.String;
+    inci_label: Schema.Attribute.String;
+    moq_label: Schema.Attribute.String;
+    packaging_label: Schema.Attribute.String;
+    shelf_life_label: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_hero_sections';
+  info: {
+    displayName: 'hero_section';
+  };
+  attributes: {
+    hero_section: Schema.Attribute.Component<'shared.hero', false>;
+  };
+}
+
 export interface OurBusinessHotSpot extends Struct.ComponentSchema {
   collectionName: 'components_our_business_hot_spots';
   info: {
@@ -451,6 +592,17 @@ export interface OurBusinessHotSpot extends Struct.ComponentSchema {
     feature_desc: Schema.Attribute.Text & Schema.Attribute.Required;
     feature_icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     feature_title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessListProductSection extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_list_product_sections';
+  info: {
+    displayName: 'list_product_section';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -477,6 +629,26 @@ export interface OurBusinessOurCatalogSection extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface OurBusinessProductDetailSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_product_detail_sections';
+  info: {
+    displayName: 'product_detail_section';
+  };
+  attributes: {
+    description_application: Schema.Attribute.Text;
+    general_information_label: Schema.Attribute.Component<
+      'our-business.general-information-title',
+      false
+    >;
+    title_accordion: Schema.Attribute.String;
+    title_application: Schema.Attribute.String;
+    title_botanical: Schema.Attribute.String;
+    title_format: Schema.Attribute.String;
+    title_organoleptic: Schema.Attribute.String;
   };
 }
 
@@ -537,8 +709,12 @@ export interface SharedButton extends Struct.ComponentSchema {
     displayName: 'button';
   };
   attributes: {
-    path: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    path: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -549,8 +725,32 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    number: Schema.Attribute.Integer;
+    number: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedContactUs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_uses';
+  info: {
+    displayName: 'contact_us';
+  };
+  attributes: {
+    button: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    field_company_name: Schema.Attribute.Component<'shared.field-name', false>;
+    field_email: Schema.Attribute.Component<'shared.field-name', false>;
+    field_name: Schema.Attribute.Component<'shared.field-name', false>;
+    field_note: Schema.Attribute.Component<'shared.field-name', false>;
+    field_topic: Schema.Attribute.Component<'shared.field-dropdown', false>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -587,6 +787,29 @@ export interface SharedFeatureSection extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     text: Schema.Attribute.Blocks;
     title: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedFieldDropdown extends Struct.ComponentSchema {
+  collectionName: 'components_shared_field_dropdowns';
+  info: {
+    displayName: 'field_dropdown';
+  };
+  attributes: {
+    option: Schema.Attribute.Component<'shared.title', true>;
+    placeholder: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFieldName extends Struct.ComponentSchema {
+  collectionName: 'components_shared_field_names';
+  info: {
+    displayName: 'field_name';
+  };
+  attributes: {
+    placeholder: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -651,11 +874,22 @@ export interface SharedPageSlug extends Struct.ComponentSchema {
     displayName: 'page_info';
   };
   attributes: {
-    path: Schema.Attribute.String;
+    path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    title: Schema.Attribute.String;
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -871,19 +1105,28 @@ declare module '@strapi/strapi' {
       'our-business.business-appliance-section': OurBusinessBusinessApplianceSection;
       'our-business.business-summary-section': OurBusinessBusinessSummarySection;
       'our-business.certification': OurBusinessCertification;
+      'our-business.contact-us-section': OurBusinessContactUsSection;
+      'our-business.faq-section': OurBusinessFaqSection;
       'our-business.general-information': OurBusinessGeneralInformation;
+      'our-business.general-information-title': OurBusinessGeneralInformationTitle;
+      'our-business.hero-section': OurBusinessHeroSection;
       'our-business.hot-spot': OurBusinessHotSpot;
+      'our-business.list-product-section': OurBusinessListProductSection;
       'our-business.main-content': OurBusinessMainContent;
       'our-business.our-catalog-section': OurBusinessOurCatalogSection;
+      'our-business.product-detail-section': OurBusinessProductDetailSection;
       'our-business.slidder-card': OurBusinessSlidderCard;
       'our-business.sticky-nav': OurBusinessStickyNav;
       'shared.accordion-item': SharedAccordionItem;
       'shared.badge': SharedBadge;
       'shared.button': SharedButton;
       'shared.card': SharedCard;
+      'shared.contact-us': SharedContactUs;
       'shared.email': SharedEmail;
       'shared.feature': SharedFeature;
       'shared.feature-section': SharedFeatureSection;
+      'shared.field-dropdown': SharedFieldDropdown;
+      'shared.field-name': SharedFieldName;
       'shared.hero': SharedHero;
       'shared.keywords': SharedKeywords;
       'shared.lang': SharedLang;

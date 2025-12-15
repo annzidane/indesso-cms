@@ -15,6 +15,15 @@
       "type": "component",
       "component": "shared.page-slug",
       "repeatable": false
+    },
+    "page_sections": {
+      "type": "dynamiczone",
+      "components": [
+        "our-business.list-product-section",
+        "our-business.faq-section",
+        "our-business.hero-section",
+        "our-business.contact-us-section"
+      ]
     }
   }
 }

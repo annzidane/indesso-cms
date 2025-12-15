@@ -32,7 +32,17 @@ export default ({ env }) => [
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
-  'strapi::body',
+  {
+    name: 'strapi::body',
+    config: {
+      formLimit: '100mb', // Untuk form data (upload)
+      jsonLimit: '10mb',  // Untuk JSON body
+      textLimit: '10mb',  // Untuk text body
+      formidable: {
+        maxFileSize: 100 * 1024 * 1024, // 100 MB max untuk video
+      },
+    },
+  },
   'strapi::session',
   'strapi::favicon',
   'strapi::public',

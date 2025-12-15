@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_our_business_list_product_sections",
+  "info": {
+    "displayName": "list_product_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

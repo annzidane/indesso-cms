@@ -6,15 +6,20 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "slug": {
       "type": "string",
+      "maxLength": 100,
       "required": true,
       "unique": true
     },
     "path": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

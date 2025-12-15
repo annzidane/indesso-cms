@@ -9,7 +9,8 @@
       "type": "string"
     },
     "number": {
-      "type": "integer"
+      "type": "integer",
+      "max": 100
     },
     "description": {
       "type": "text"

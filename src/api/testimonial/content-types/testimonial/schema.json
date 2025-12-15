@@ -21,7 +21,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "position": {
       "type": "string",
@@ -29,7 +30,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "profile_image": {
       "type": "media",
@@ -51,6 +53,7 @@
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -61,7 +64,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "quote": {
       "type": "blocks",
@@ -69,7 +73,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     }
   }
 }

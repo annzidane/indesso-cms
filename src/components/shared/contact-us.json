@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_shared_contact_uses",
+  "info": {
+    "displayName": "contact_us"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "field_name": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_company_name": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_email": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_topic": {
+      "type": "component",
+      "component": "shared.field-dropdown",
+      "repeatable": false
+    },
+    "field_note": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "button": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
