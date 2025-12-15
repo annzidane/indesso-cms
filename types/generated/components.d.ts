@@ -6,9 +6,23 @@ export interface AboutUsBoardSection extends Struct.ComponentSchema {
     displayName: 'board_section';
   };
   attributes: {
-    eyebrow: Schema.Attribute.String;
-    sections: Schema.Attribute.Component<'about-us.member-section', true>;
-    title: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    sections: Schema.Attribute.Component<'about-us.member-section', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -28,10 +42,12 @@ export interface AboutUsLeadership extends Struct.ComponentSchema {
     displayName: 'member_card';
   };
   attributes: {
-    first_name: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    first_name: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     last_name: Schema.Attribute.String;
-    order_number: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    order_number: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     position: Schema.Attribute.Relation<'oneToOne', 'api::position.position'>;
   };
 }
@@ -43,7 +59,11 @@ export interface AboutUsMemberSection extends Struct.ComponentSchema {
   };
   attributes: {
     members: Schema.Attribute.Component<'about-us.leadership', true>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -56,8 +76,16 @@ export interface AboutUsResearchInnovationSection
   attributes: {
     card: Schema.Attribute.Component<'shared.feature', true>;
     description: Schema.Attribute.Blocks;
-    eyebrow: Schema.Attribute.String;
-    title: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -71,9 +99,17 @@ export interface AboutUsResponsibleOperationsSection
     accordion_items: Schema.Attribute.Component<'shared.accordion-item', true>;
     background_image: Schema.Attribute.Media<'images'>;
     description: Schema.Attribute.Blocks;
-    eyebrow: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -85,9 +121,17 @@ export interface AboutUsScientificMasterySection
   };
   attributes: {
     description: Schema.Attribute.Blocks;
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     tabs: Schema.Attribute.Component<'about-us.scientific-tab', true>;
-    title: Schema.Attribute.Text;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -97,11 +141,24 @@ export interface AboutUsScientificTab extends Struct.ComponentSchema {
     displayName: 'scientific_tab';
   };
   attributes: {
-    label: Schema.Attribute.String;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     left_block_text: Schema.Attribute.Blocks;
-    left_block_title: Schema.Attribute.Text;
-    main_image: Schema.Attribute.Media<'images'>;
-    slug: Schema.Attribute.Text & Schema.Attribute.Unique;
+    left_block_title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    main_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -111,10 +168,18 @@ export interface AboutUsStory extends Struct.ComponentSchema {
     displayName: 'story';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images'>;
-    text: Schema.Attribute.Blocks;
-    title: Schema.Attribute.String;
-    title_slider: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    text: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_slider: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -124,9 +189,17 @@ export interface AboutUsStorySection extends Struct.ComponentSchema {
     displayName: 'story_section';
   };
   attributes: {
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     stories: Schema.Attribute.Component<'about-us.story', true>;
-    title: Schema.Attribute.Text;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -226,8 +299,16 @@ export interface FooterFooterMenu extends Struct.ComponentSchema {
   };
   attributes: {
     menus: Schema.Attribute.Component<'shared.menus', true>;
-    path: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -686,8 +767,12 @@ export interface SharedAccordionItem extends Struct.ComponentSchema {
     displayName: 'accordion_item';
   };
   attributes: {
-    description: Schema.Attribute.Blocks;
-    title: Schema.Attribute.String;
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -760,8 +845,15 @@ export interface SharedEmail extends Struct.ComponentSchema {
     displayName: 'email';
   };
   attributes: {
-    email: Schema.Attribute.Email;
-    email_title: Schema.Attribute.String;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    email_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -771,9 +863,13 @@ export interface SharedFeature extends Struct.ComponentSchema {
     displayName: 'image_card';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     text: Schema.Attribute.Blocks;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -819,8 +915,9 @@ export interface SharedHero extends Struct.ComponentSchema {
     displayName: 'hero';
   };
   attributes: {
-    background_image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String;
+    background_image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -855,8 +952,16 @@ export interface SharedMenus extends Struct.ComponentSchema {
     displayName: 'menus';
   };
   attributes: {
-    path: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -899,15 +1004,15 @@ export interface SharedPhone extends Struct.ComponentSchema {
     displayName: 'phone';
   };
   attributes: {
-    phone_number: Schema.Attribute.BigInteger &
-      Schema.Attribute.SetMinMax<
-        {
-          max: '013';
-          min: '011';
-        },
-        string
-      >;
-    phone_title: Schema.Attribute.String;
+    phone_number: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 15;
+      }>;
+    phone_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 

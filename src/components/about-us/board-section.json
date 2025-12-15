@@ -6,15 +6,20 @@
   "options": {},
   "attributes": {
     "eyebrow": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "title": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     },
     "sections": {
       "type": "component",
       "component": "about-us.member-section",
-      "repeatable": true
+      "repeatable": true,
+      "max": 2
     }
   },
   "config": {}

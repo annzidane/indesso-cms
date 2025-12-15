@@ -6,12 +6,13 @@
   "options": {},
   "attributes": {
     "phone_title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "phone_number": {
-      "type": "biginteger",
-      "min": "011",
-      "max": "013"
+      "type": "string",
+      "maxLength": 15
     }
   },
   "config": {}

@@ -6,21 +6,28 @@
   "options": {},
   "attributes": {
     "label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "slug": {
       "type": "text",
+      "maxLength": 100,
+      "required": true,
       "unique": true
     },
     "main_image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "left_block_title": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     },
     "left_block_text": {
       "type": "blocks"

@@ -9,19 +9,36 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "maxLength": 100,
       "required": true
     },
     "code": {
       "type": "uid",
       "targetField": "name",
-      "required": true
+      "required": true,
+      "maxLength": 100
     },
     "group": {
       "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
       "enum": [
         "commissioner",
         "director"

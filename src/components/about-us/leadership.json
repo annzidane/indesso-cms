@@ -8,12 +8,14 @@
     "image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "first_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "last_name": {
       "type": "string"
@@ -25,6 +27,7 @@
     },
     "order_number": {
       "type": "integer",
+      "required": true,
       "unique": true
     }
   },

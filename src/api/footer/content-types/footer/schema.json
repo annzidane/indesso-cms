@@ -23,6 +23,7 @@
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "files",
         "images"
@@ -34,7 +35,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "contact_phone": {
       "type": "component",
@@ -72,7 +74,8 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true
     }
   }
 }

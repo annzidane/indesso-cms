@@ -6,10 +6,13 @@
   "options": {},
   "attributes": {
     "email_title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "maxLength": 100
     }
   },
   "config": {}
