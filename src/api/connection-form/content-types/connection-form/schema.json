@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "connection_forms",
+  "info": {
+    "singularName": "connection-form",
+    "pluralName": "connection-forms",
+    "displayName": "Connection Form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "inquiry_topics": {
+      "type": "string"
+    },
+    "your_notes": {
+      "type": "text"
+    },
+    "form_page": {
+      "type": "string"
+    }
+  }
+}

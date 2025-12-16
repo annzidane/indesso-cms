@@ -613,6 +613,40 @@ export interface ApiCareerCareer extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiConnectionFormConnectionForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'connection_forms';
+  info: {
+    displayName: 'Connection Form';
+    pluralName: 'connection-forms';
+    singularName: 'connection-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company_name: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    form_page: Schema.Attribute.String;
+    inquiry_topics: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::connection-form.connection-form'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    your_notes: Schema.Attribute.Text;
+  };
+}
+
 export interface ApiFaqBotanicalFaqBotanical
   extends Struct.CollectionTypeSchema {
   collectionName: 'faq_botanicals';
@@ -1903,7 +1937,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1912,6 +1945,7 @@ export interface PluginUsersPermissionsUser
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cv: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1962,6 +1996,7 @@ declare module '@strapi/strapi' {
       'api::banner.banner': ApiBannerBanner;
       'api::botanical.botanical': ApiBotanicalBotanical;
       'api::career.career': ApiCareerCareer;
+      'api::connection-form.connection-form': ApiConnectionFormConnectionForm;
       'api::faq-botanical.faq-botanical': ApiFaqBotanicalFaqBotanical;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
