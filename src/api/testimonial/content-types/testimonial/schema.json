@@ -22,6 +22,7 @@
           "localized": true
         }
       },
+      "maxLength": 100,
       "required": true
     },
     "position": {
@@ -31,6 +32,7 @@
           "localized": true
         }
       },
+      "maxLength": 100,
       "required": true
     },
     "profile_image": {

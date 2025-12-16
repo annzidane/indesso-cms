@@ -6,10 +6,13 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": false
     },
     "image": {
       "type": "media",
