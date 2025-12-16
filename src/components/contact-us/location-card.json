@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_contact_us_location_cards",
+  "info": {
+    "displayName": "location_card"
+  },
+  "options": {},
+  "attributes": {
+    "office_type": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "city_name": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "location_label": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "maxLength": 150,
+      "required": true
+    },
+    "phone_label": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "phone_number": {
+      "type": "string",
+      "maxLength": 20,
+      "required": true
+    },
+    "terms_agreement": {
+      "type": "blocks",
+      "required": true
+    },
+    "button": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    }
+  },
+  "config": {}
+}

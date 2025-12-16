@@ -6,10 +6,14 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "path": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description": {
       "type": "text"
@@ -17,12 +21,15 @@
     "image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "button": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 50,
+      "required": false
     },
     "menu_detail": {
       "type": "component",

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_contact_us_visitor_center_pages",
+  "info": {
+    "displayName": "visitor_center_page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "visitor_center_section": {
+      "type": "component",
+      "component": "contact-us.visitor-center-section",
+      "repeatable": false
+    },
+    "visitor_form_section": {
+      "type": "component",
+      "component": "contact-us.visitor-form-section",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

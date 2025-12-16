@@ -16,11 +16,6 @@
       "component": "shared.page-slug",
       "repeatable": false
     },
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "repeatable": false
-    },
     "page_sections": {
       "type": "dynamiczone",
       "components": [
@@ -31,6 +26,11 @@
         "sustainability.commitment-section",
         "sustainability.hero-section"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_contact_us_our_location_sections",
+  "info": {
+    "displayName": "our_location_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "country_tab": {
+      "type": "component",
+      "component": "contact-us.country-tab",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

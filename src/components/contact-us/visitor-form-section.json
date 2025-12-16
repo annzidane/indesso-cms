@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_contact_us_visitor_form_sections",
+  "info": {
+    "displayName": "visitor_form_section"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "field_name": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_institution": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_date": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_time": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_visitor": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "rules_card": {
+      "type": "component",
+      "component": "contact-us.rules-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

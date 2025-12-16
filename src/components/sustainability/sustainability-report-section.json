@@ -6,16 +6,21 @@
   "options": {},
   "attributes": {
     "eyebrow": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "title": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     },
     "description": {
       "type": "text"
     },
     "sub_title": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100
     },
     "button": {
       "type": "string"
@@ -31,7 +36,9 @@
       ]
     },
     "title_report": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

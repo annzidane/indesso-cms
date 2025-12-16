@@ -211,9 +211,17 @@ export interface CareerCareerJoinus extends Struct.ComponentSchema {
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.String;
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -224,12 +232,20 @@ export interface CareerGrowingTogether extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Blocks;
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     growing_together_slide: Schema.Attribute.Component<
       'career.growing-together-slide',
       true
     >;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -241,7 +257,11 @@ export interface CareerGrowingTogetherSlide extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -263,9 +283,17 @@ export interface CareerLifeAtIndesso extends Struct.ComponentSchema {
   attributes: {
     career_showcase: Schema.Attribute.Component<'shared.badge', true>;
     description: Schema.Attribute.Blocks;
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -275,12 +303,20 @@ export interface CareerTestimonial extends Struct.ComponentSchema {
     displayName: 'testimonial_section';
   };
   attributes: {
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     testimonials: Schema.Attribute.Relation<
       'oneToMany',
       'api::testimonial.testimonial'
     >;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -290,6 +326,206 @@ export interface CareerTestimonialData extends Struct.ComponentSchema {
     displayName: 'testimonial_data';
   };
   attributes: {};
+}
+
+export interface ContactUsContactUsPage extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_contact_us_pages';
+  info: {
+    displayName: 'contact_us_page';
+  };
+  attributes: {
+    contact_us_section: Schema.Attribute.Component<'shared.contact-us', false>;
+    our_location_section: Schema.Attribute.Component<
+      'contact-us.our-location-section',
+      false
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface ContactUsContactUsSection extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_contact_us_sections';
+  info: {
+    displayName: 'contact_us_section';
+  };
+  attributes: {
+    contact_us_section: Schema.Attribute.Component<'shared.contact-us', false>;
+  };
+}
+
+export interface ContactUsCountryTab extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_country_tabs';
+  info: {
+    displayName: 'country_tab';
+  };
+  attributes: {
+    location_card: Schema.Attribute.Component<'contact-us.location-card', true>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface ContactUsLocationCard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_location_cards';
+  info: {
+    displayName: 'location_card';
+  };
+  attributes: {
+    address: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    city_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    location_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    office_type: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    phone_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    phone_number: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }>;
+    terms_agreement: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ContactUsOurLocationSection extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_our_location_sections';
+  info: {
+    displayName: 'our_location_section';
+  };
+  attributes: {
+    country_tab: Schema.Attribute.Component<'contact-us.country-tab', true>;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface ContactUsRulesCard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_rules_cards';
+  info: {
+    displayName: 'rules_card';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    rules: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface ContactUsVisitorCenterPage extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_visitor_center_pages';
+  info: {
+    displayName: 'visitor_center_page';
+  };
+  attributes: {
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    visitor_center_section: Schema.Attribute.Component<
+      'contact-us.visitor-center-section',
+      false
+    >;
+    visitor_form_section: Schema.Attribute.Component<
+      'contact-us.visitor-form-section',
+      false
+    >;
+  };
+}
+
+export interface ContactUsVisitorCenterSection extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_visitor_center_sections';
+  info: {
+    displayName: 'visitor_center_section';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    link: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface ContactUsVisitorFormSection extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_visitor_form_sections';
+  info: {
+    displayName: 'visitor_form_section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    field_date: Schema.Attribute.Component<'shared.field-name', false>;
+    field_institution: Schema.Attribute.Component<'shared.field-name', false>;
+    field_name: Schema.Attribute.Component<'shared.field-name', false>;
+    field_time: Schema.Attribute.Component<'shared.field-name', false>;
+    field_visitor: Schema.Attribute.Component<'shared.field-name', false>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    rules_card: Schema.Attribute.Component<'contact-us.rules-card', true>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
 }
 
 export interface FooterFooterMenu extends Struct.ComponentSchema {
@@ -318,10 +554,18 @@ export interface HeaderMenuDetail extends Struct.ComponentSchema {
     displayName: 'menu_detail';
   };
   attributes: {
-    button: Schema.Attribute.String;
+    button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
     description: Schema.Attribute.Text;
     slug: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -331,12 +575,23 @@ export interface HeaderMenuHeader extends Struct.ComponentSchema {
     displayName: 'menu_header';
   };
   attributes: {
-    button: Schema.Attribute.String;
+    button: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     menu_detail: Schema.Attribute.Component<'header.menu-detail', true>;
-    path: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -879,10 +1134,18 @@ export interface SharedFeatureSection extends Struct.ComponentSchema {
     displayName: 'feature_section';
   };
   attributes: {
-    eyebrow: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     text: Schema.Attribute.Blocks;
-    title: Schema.Attribute.Text;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -917,7 +1180,11 @@ export interface SharedHero extends Struct.ComponentSchema {
   attributes: {
     background_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -982,18 +1249,18 @@ export interface SharedPageSlug extends Struct.ComponentSchema {
     path: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 225;
       }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 225;
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 225;
       }>;
   };
 }
@@ -1086,7 +1353,7 @@ export interface SustainabilityAssesstmentsCard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 
@@ -1102,8 +1369,16 @@ export interface SustainabilityCommitmentSection
       true
     >;
     description: Schema.Attribute.Text;
-    eyebrow: Schema.Attribute.String;
-    title: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1126,9 +1401,17 @@ export interface SustainabilityResponsibleOperationsSection
   attributes: {
     card_image: Schema.Attribute.Component<'shared.feature', true>;
     description: Schema.Attribute.Blocks;
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     text: Schema.Attribute.Text;
-    title: Schema.Attribute.Text;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1141,8 +1424,16 @@ export interface SustainabilitySustainabilityInitiativeSection
   attributes: {
     card_image: Schema.Attribute.Component<'shared.feature', true>;
     description: Schema.Attribute.Text;
-    eyebrow: Schema.Attribute.String;
-    title: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1155,11 +1446,26 @@ export interface SustainabilitySustainabilityReportSection
   attributes: {
     button: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    eyebrow: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    sub_title: Schema.Attribute.Text;
-    title: Schema.Attribute.Text;
-    title_report: Schema.Attribute.String;
+    sub_title: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_report: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1195,6 +1501,15 @@ declare module '@strapi/strapi' {
       'career.life-at-indesso': CareerLifeAtIndesso;
       'career.testimonial': CareerTestimonial;
       'career.testimonial-data': CareerTestimonialData;
+      'contact-us.contact-us-page': ContactUsContactUsPage;
+      'contact-us.contact-us-section': ContactUsContactUsSection;
+      'contact-us.country-tab': ContactUsCountryTab;
+      'contact-us.location-card': ContactUsLocationCard;
+      'contact-us.our-location-section': ContactUsOurLocationSection;
+      'contact-us.rules-card': ContactUsRulesCard;
+      'contact-us.visitor-center-page': ContactUsVisitorCenterPage;
+      'contact-us.visitor-center-section': ContactUsVisitorCenterSection;
+      'contact-us.visitor-form-section': ContactUsVisitorFormSection;
       'footer.footer-menu': FooterFooterMenu;
       'header.menu-detail': HeaderMenuDetail;
       'header.menu-header': HeaderMenuHeader;

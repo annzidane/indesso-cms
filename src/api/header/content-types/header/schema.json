@@ -23,6 +23,7 @@
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -35,6 +36,7 @@
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contact_us_rules_cards",
+  "info": {
+    "displayName": "rules_card"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "rules": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -6,13 +6,17 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description": {
       "type": "text"
     },
     "button": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 50,
+      "required": true
     },
     "slug": {
       "type": "string"

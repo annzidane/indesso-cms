@@ -6,10 +6,14 @@
   "options": {},
   "attributes": {
     "eyebrow": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "title": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 100,
+      "required": true
     },
     "text": {
       "type": "blocks"
@@ -17,6 +21,7 @@
     "image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]

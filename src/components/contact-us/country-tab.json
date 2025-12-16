@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_contact_us_country_tabs",
+  "info": {
+    "displayName": "country_tab"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "location_card": {
+      "type": "component",
+      "component": "contact-us.location-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

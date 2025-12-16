@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_contact_us_contact_us_pages",
+  "info": {
+    "displayName": "contact_us_page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "our_location_section": {
+      "type": "component",
+      "component": "contact-us.our-location-section",
+      "repeatable": false
+    },
+    "contact_us_section": {
+      "type": "component",
+      "component": "shared.contact-us",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
