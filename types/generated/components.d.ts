@@ -507,6 +507,11 @@ export interface ContactUsVisitorFormSection extends Struct.ComponentSchema {
     displayName: 'visitor_form_section';
   };
   attributes: {
+    button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
     description: Schema.Attribute.Text;
     eyebrow: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -520,6 +525,7 @@ export interface ContactUsVisitorFormSection extends Struct.ComponentSchema {
     field_visitor: Schema.Attribute.Component<'shared.field-name', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     rules_card: Schema.Attribute.Component<'contact-us.rules-card', true>;
+    terms_agreement: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
