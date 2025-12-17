@@ -25,6 +25,16 @@
       "component": "shared.page-slug",
       "repeatable": false
     },
+    "hero_section": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.hero",
+      "repeatable": false
+    },
     "page_nav": {
       "type": "dynamiczone",
       "pluginOptions": {
