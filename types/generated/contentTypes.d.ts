@@ -1563,6 +1563,38 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVisitorFormVisitorForm extends Struct.CollectionTypeSchema {
+  collectionName: 'visitor_forms';
+  info: {
+    displayName: 'Visitor Form';
+    pluralName: 'visitor-forms';
+    singularName: 'visitor-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date_of_visit: Schema.Attribute.Date;
+    institution: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::visitor-form.visitor-form'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    number_of_visitors: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    visit_time: Schema.Attribute.Time;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -2098,6 +2130,7 @@ declare module '@strapi/strapi' {
       'api::story.story': ApiStoryStory;
       'api::sustainability.sustainability': ApiSustainabilitySustainability;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::visitor-form.visitor-form': ApiVisitorFormVisitorForm;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visitor_forms",
+  "info": {
+    "singularName": "visitor-form",
+    "pluralName": "visitor-forms",
+    "displayName": "Visitor Form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "institution": {
+      "type": "text"
+    },
+    "date_of_visit": {
+      "type": "date"
+    },
+    "visit_time": {
+      "type": "time"
+    },
+    "number_of_visitors": {
+      "type": "integer"
+    }
+  }
+}
