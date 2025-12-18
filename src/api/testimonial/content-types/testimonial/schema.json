@@ -45,7 +45,8 @@
       "multiple": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "searchable": false
     },
     "image": {
       "type": "media",
@@ -58,7 +59,8 @@
       "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "searchable": false
     },
     "quote_title": {
       "type": "text",
