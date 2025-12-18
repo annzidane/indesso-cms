@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insight_categories",
+  "info": {
+    "singularName": "insight-category",
+    "pluralName": "insight-categories",
+    "displayName": "M - Insight Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    }
+  }
+}

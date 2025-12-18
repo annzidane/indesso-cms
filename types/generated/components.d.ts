@@ -804,6 +804,85 @@ export interface HomePageStatsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface MediaMediaDetail extends Struct.ComponentSchema {
+  collectionName: 'components_media_media_details';
+  info: {
+    displayName: 'media_detail';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    button: Schema.Attribute.Component<'shared.button', false>;
+    social_media: Schema.Attribute.Component<'media.social-media', true>;
+    title_explore: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_socmed: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+  };
+}
+
+export interface MediaMediaInsight extends Struct.ComponentSchema {
+  collectionName: 'components_media_media_insights';
+  info: {
+    displayName: 'media_insight';
+  };
+  attributes: {
+    lable_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_filter: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface MediaMediaPage extends Struct.ComponentSchema {
+  collectionName: 'components_media_media_pages';
+  info: {
+    displayName: 'media_page';
+  };
+  attributes: {
+    article_grid_title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    button_label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+  };
+}
+
+export interface MediaSocialMedia extends Struct.ComponentSchema {
+  collectionName: 'components_media_social_medias';
+  info: {
+    displayName: 'social_media';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    url: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
 export interface OurBusinessBotanicalSourceSection
   extends Struct.ComponentSchema {
   collectionName: 'components_our_business_botanical_source_sections';
@@ -1527,6 +1606,10 @@ declare module '@strapi/strapi' {
       'home-page.matric-card': HomePageMatricCard;
       'home-page.reason-section': HomePageReasonSection;
       'home-page.stats-card': HomePageStatsCard;
+      'media.media-detail': MediaMediaDetail;
+      'media.media-insight': MediaMediaInsight;
+      'media.media-page': MediaMediaPage;
+      'media.social-media': MediaSocialMedia;
       'our-business.botanical-source-section': OurBusinessBotanicalSourceSection;
       'our-business.business-appliance-section': OurBusinessBusinessApplianceSection;
       'our-business.business-summary-section': OurBusinessBusinessSummarySection;

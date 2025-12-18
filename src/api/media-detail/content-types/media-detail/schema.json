@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "media_details",
+  "info": {
+    "singularName": "media-detail",
+    "pluralName": "media-details",
+    "displayName": "Media: Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "media_detail": {
+      "type": "component",
+      "component": "media.media-detail",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

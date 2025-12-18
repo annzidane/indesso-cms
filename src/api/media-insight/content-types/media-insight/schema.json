@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_insights",
+  "info": {
+    "singularName": "media-insight",
+    "pluralName": "media-insights",
+    "displayName": "M - Media Insight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "maxLength": 255,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "insight_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::insight-category.insight-category"
+    }
+  }
+}

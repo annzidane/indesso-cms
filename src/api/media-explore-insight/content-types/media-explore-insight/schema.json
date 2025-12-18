@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "media_explore_insights",
+  "info": {
+    "singularName": "media-explore-insight",
+    "pluralName": "media-explore-insights",
+    "displayName": "Media: Explore Insight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page_info": {
+      "type": "component",
+      "component": "shared.page-slug",
+      "repeatable": false
+    },
+    "hero_section": {
+      "type": "component",
+      "component": "shared.hero",
+      "repeatable": false
+    },
+    "media_insight": {
+      "type": "component",
+      "component": "media.media-insight",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

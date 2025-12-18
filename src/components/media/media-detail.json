@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_media_media_details",
+  "info": {
+    "displayName": "media_detail"
+  },
+  "options": {},
+  "attributes": {
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title_socmed": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "social_media": {
+      "type": "component",
+      "component": "media.social-media",
+      "repeatable": true
+    },
+    "title_explore": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

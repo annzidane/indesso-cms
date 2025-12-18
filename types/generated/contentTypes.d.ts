@@ -488,6 +488,46 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
+  collectionName: 'articles';
+  info: {
+    displayName: 'M - Article';
+    pluralName: 'articles';
+    singularName: 'article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    article_category: Schema.Attribute.Enumeration<
+      ['Press Release', 'Corporate Events']
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::article.article'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   collectionName: 'banners';
   info: {
@@ -633,7 +673,7 @@ export interface ApiConnectionFormConnectionForm
   extends Struct.CollectionTypeSchema {
   collectionName: 'connection_forms';
   info: {
-    displayName: 'Connection Form';
+    displayName: 'CA - Connection Form';
     pluralName: 'connection-forms';
     singularName: 'connection-form';
   };
@@ -974,6 +1014,179 @@ export interface ApiIndustryCategoryIndustryCategory
     products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInsightCategoryInsightCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'insight_categories';
+  info: {
+    displayName: 'M - Insight Category';
+    pluralName: 'insight-categories';
+    singularName: 'insight-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insight-category.insight-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMediaDetailMediaDetail extends Struct.SingleTypeSchema {
+  collectionName: 'media_details';
+  info: {
+    displayName: 'Media: Detail';
+    pluralName: 'media-details';
+    singularName: 'media-detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::media-detail.media-detail'
+    > &
+      Schema.Attribute.Private;
+    media_detail: Schema.Attribute.Component<'media.media-detail', false>;
+    page_info: Schema.Attribute.Component<'shared.page-slug', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMediaExploreInsightMediaExploreInsight
+  extends Struct.SingleTypeSchema {
+  collectionName: 'media_explore_insights';
+  info: {
+    displayName: 'Media: Explore Insight';
+    pluralName: 'media-explore-insights';
+    singularName: 'media-explore-insight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_section: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::media-explore-insight.media-explore-insight'
+    > &
+      Schema.Attribute.Private;
+    media_insight: Schema.Attribute.Component<'media.media-insight', false>;
+    page_info: Schema.Attribute.Component<'shared.page-slug', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMediaInsightMediaInsight
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'media_insights';
+  info: {
+    displayName: 'M - Media Insight';
+    pluralName: 'media-insights';
+    singularName: 'media-insight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    insight_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insight-category.insight-category'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::media-insight.media-insight'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMediaMedia extends Struct.SingleTypeSchema {
+  collectionName: 'medias';
+  info: {
+    displayName: 'Media';
+    pluralName: 'medias';
+    singularName: 'media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_section: Schema.Attribute.Component<'shared.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::media.media'> &
+      Schema.Attribute.Private;
+    page_info: Schema.Attribute.Component<'shared.page-slug', false>;
+    page_nav: Schema.Attribute.DynamicZone<['media.media-page']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 5;
+        },
+        number
+      >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1543,12 +1756,15 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    quote: Schema.Attribute.Blocks &
+    quote: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
       }>;
     quote_title: Schema.Attribute.Text &
       Schema.Attribute.Required &
@@ -1556,6 +1772,9 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
         i18n: {
           localized: true;
         };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 128;
       }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1566,7 +1785,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
 export interface ApiVisitorFormVisitorForm extends Struct.CollectionTypeSchema {
   collectionName: 'visitor_forms';
   info: {
-    displayName: 'Visitor Form';
+    displayName: 'CA - Visitor Form';
     pluralName: 'visitor-forms';
     singularName: 'visitor-form';
   };
@@ -2106,6 +2325,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::article.article': ApiArticleArticle;
       'api::banner.banner': ApiBannerBanner;
       'api::botanical.botanical': ApiBotanicalBotanical;
       'api::career.career': ApiCareerCareer;
@@ -2116,6 +2336,11 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry-category.industry-category': ApiIndustryCategoryIndustryCategory;
+      'api::insight-category.insight-category': ApiInsightCategoryInsightCategory;
+      'api::media-detail.media-detail': ApiMediaDetailMediaDetail;
+      'api::media-explore-insight.media-explore-insight': ApiMediaExploreInsightMediaExploreInsight;
+      'api::media-insight.media-insight': ApiMediaInsightMediaInsight;
+      'api::media.media': ApiMediaMedia;
       'api::organoleptic.organoleptic': ApiOrganolepticOrganoleptic;
       'api::our-business-botanical.our-business-botanical': ApiOurBusinessBotanicalOurBusinessBotanical;
       'api::our-business-catalog.our-business-catalog': ApiOurBusinessCatalogOurBusinessCatalog;

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_media_media_insights",
+  "info": {
+    "displayName": "media_insight"
+  },
+  "options": {},
+  "attributes": {
+    "title_filter": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "lable_button": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}
