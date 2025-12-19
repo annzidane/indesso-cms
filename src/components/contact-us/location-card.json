@@ -34,15 +34,6 @@
       "type": "string",
       "maxLength": 20,
       "required": true
-    },
-    "terms_agreement": {
-      "type": "blocks",
-      "required": true
-    },
-    "button": {
-      "type": "string",
-      "maxLength": 50,
-      "required": true
     }
   },
   "config": {}

@@ -383,11 +383,6 @@ export interface ContactUsLocationCard extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 150;
       }>;
-    button: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
     city_name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -413,7 +408,6 @@ export interface ContactUsLocationCard extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 20;
       }>;
-    terms_agreement: Schema.Attribute.Blocks & Schema.Attribute.Required;
   };
 }
 
