@@ -2,7 +2,7 @@
 FROM node:22-alpine
 
 # Install dependencies
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git python3
 
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
@@ -10,7 +10,9 @@ ENV NODE_ENV=${NODE_ENV}
 # Set working directory
 WORKDIR /opt/
 COPY package.json package-lock.json ./
+COPY patches ./patches
 RUN npm install -g node-gyp
+# postinstall script will run patch-package automatically
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install
 
 # Set PATH
@@ -31,5 +33,5 @@ RUN chown -R node:node /opt/app && \
 # Switch to node user
 USER node
 
-EXPOSE 1337
+EXPOSE 1337 5173
 CMD ["npm", "run", "develop"]
