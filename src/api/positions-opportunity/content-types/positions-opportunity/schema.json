@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "positions_opportunities",
+  "info": {
+    "singularName": "positions-opportunity",
+    "pluralName": "positions-opportunities",
+    "displayName": "C - Positions Opportunity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "maxLength": 100
+    }
+  }
+}

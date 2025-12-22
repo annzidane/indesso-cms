@@ -303,7 +303,7 @@ export interface CareerJoinUsModal extends Struct.ComponentSchema {
     field_email: Schema.Attribute.Component<'shared.field-name', false>;
     field_file: Schema.Attribute.Component<'shared.field-file', false>;
     field_name: Schema.Attribute.Component<'shared.field-name', false>;
-    field_position: Schema.Attribute.Component<'shared.field-dropdown', false>;
+    field_position: Schema.Attribute.Component<'shared.field-name', false>;
     submit_button: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{

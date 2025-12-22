@@ -776,6 +776,7 @@ export interface ApiConnectionFormConnectionForm
       'api::connection-form.connection-form'
     > &
       Schema.Attribute.Private;
+    log: Schema.Attribute.JSON;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1530,6 +1531,44 @@ export interface ApiPositionPosition extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPositionsOpportunityPositionsOpportunity
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'positions_opportunities';
+  info: {
+    displayName: 'C - Positions Opportunity';
+    pluralName: 'positions-opportunities';
+    singularName: 'positions-opportunity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::positions-opportunity.positions-opportunity'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductFormatProductFormat
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_formats';
@@ -1894,6 +1933,45 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
       }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 128;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTopicTopic extends Struct.CollectionTypeSchema {
+  collectionName: 'topics';
+  info: {
+    displayName: 'CU - Topic';
+    pluralName: 'topics';
+    singularName: 'topic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destination_email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::topic.topic'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'topic'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    topic: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
       }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2498,6 +2576,7 @@ declare module '@strapi/strapi' {
       'api::our-business-product-detail.our-business-product-detail': ApiOurBusinessProductDetailOurBusinessProductDetail;
       'api::our-business.our-business': ApiOurBusinessOurBusiness;
       'api::position.position': ApiPositionPosition;
+      'api::positions-opportunity.positions-opportunity': ApiPositionsOpportunityPositionsOpportunity;
       'api::product-format.product-format': ApiProductFormatProductFormat;
       'api::product-sub-category.product-sub-category': ApiProductSubCategoryProductSubCategory;
       'api::product-type.product-type': ApiProductTypeProductType;
@@ -2506,6 +2585,7 @@ declare module '@strapi/strapi' {
       'api::story.story': ApiStoryStory;
       'api::sustainability.sustainability': ApiSustainabilitySustainability;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::topic.topic': ApiTopicTopic;
       'api::video.video': ApiVideoVideo;
       'api::visitor-form.visitor-form': ApiVisitorFormVisitorForm;
       'plugin::content-releases.release': PluginContentReleasesRelease;

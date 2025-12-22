@@ -32,7 +32,7 @@
     },
     "field_position": {
       "type": "component",
-      "component": "shared.field-dropdown",
+      "component": "shared.field-name",
       "repeatable": false
     },
     "field_file": {
