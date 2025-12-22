@@ -488,6 +488,56 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
+  collectionName: 'applicants';
+  info: {
+    displayName: 'C - Applicant';
+    pluralName: 'applicants';
+    singularName: 'applicant';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cv: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::applicant.applicant'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    phone_number: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 15;
+        minLength: 10;
+      }>;
+    position: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -705,7 +755,7 @@ export interface ApiConnectionFormConnectionForm
   extends Struct.CollectionTypeSchema {
   collectionName: 'connection_forms';
   info: {
-    displayName: 'CA - Connection Form';
+    displayName: 'CU - Connection Form';
     pluralName: 'connection-forms';
     singularName: 'connection-form';
   };
@@ -1594,6 +1644,11 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     botanical: Schema.Attribute.Relation<
       'manyToOne',
@@ -1605,20 +1660,38 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     general_information: Schema.Attribute.Component<
       'our-business.general-information',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     industry_categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry-category.industry-category'
     >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product.product'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 128;
+      }>;
     organoleptics: Schema.Attribute.Relation<
       'oneToMany',
       'api::organoleptic.organoleptic'
@@ -1747,7 +1820,7 @@ export interface ApiSustainabilitySustainability
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
-    displayName: 'Testimonial';
+    displayName: 'C - Testimonial';
     pluralName: 'testimonials';
     singularName: 'testimonial';
   };
@@ -1862,7 +1935,7 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
 export interface ApiVisitorFormVisitorForm extends Struct.CollectionTypeSchema {
   collectionName: 'visitor_forms';
   info: {
-    displayName: 'CA - Visitor Form';
+    displayName: 'CU - Visitor Form';
     pluralName: 'visitor-forms';
     singularName: 'visitor-form';
   };
@@ -2402,6 +2475,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::applicant.applicant': ApiApplicantApplicant;
       'api::article.article': ApiArticleArticle;
       'api::banner.banner': ApiBannerBanner;
       'api::botanical.botanical': ApiBotanicalBotanical;

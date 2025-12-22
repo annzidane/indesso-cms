@@ -209,7 +209,6 @@ export interface CareerCareerJoinus extends Struct.ComponentSchema {
     displayName: 'join_us_section';
   };
   attributes: {
-    button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.String;
     eyebrow: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -217,10 +216,28 @@ export interface CareerCareerJoinus extends Struct.ComponentSchema {
         maxLength: 100;
       }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    join_us_modal: Schema.Attribute.Component<'career.join-us-modal', false>;
+    label_visit_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    logo_visit_button: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    opportunities_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
+      }>;
+    url_visit_button: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
       }>;
   };
 }
@@ -275,6 +292,31 @@ export interface CareerHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface CareerJoinUsModal extends Struct.ComponentSchema {
+  collectionName: 'components_career_join_us_modals';
+  info: {
+    displayName: 'join_us_modal';
+  };
+  attributes: {
+    field_address: Schema.Attribute.Component<'shared.field-name', false>;
+    field_contact: Schema.Attribute.Component<'shared.field-name', false>;
+    field_email: Schema.Attribute.Component<'shared.field-name', false>;
+    field_file: Schema.Attribute.Component<'shared.field-file', false>;
+    field_name: Schema.Attribute.Component<'shared.field-name', false>;
+    field_position: Schema.Attribute.Component<'shared.field-dropdown', false>;
+    submit_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
 export interface CareerLifeAtIndesso extends Struct.ComponentSchema {
   collectionName: 'components_career_life_at_indessos';
   info: {
@@ -290,6 +332,20 @@ export interface CareerLifeAtIndesso extends Struct.ComponentSchema {
       }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface CareerOption extends Struct.ComponentSchema {
+  collectionName: 'components_career_options';
+  info: {
+    displayName: 'option';
+  };
+  attributes: {
+    option: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
@@ -924,7 +980,10 @@ export interface OurBusinessCertification extends Struct.ComponentSchema {
     displayName: 'certification';
   };
   attributes: {
-    certificate: Schema.Attribute.String;
+    certificate: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
   };
 }
 
@@ -955,17 +1014,35 @@ export interface OurBusinessGeneralInformation extends Struct.ComponentSchema {
     displayName: 'general_information';
   };
   attributes: {
-    cas_number: Schema.Attribute.String;
+    cas_number: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
     certification: Schema.Attribute.Component<
       'our-business.certification',
       true
     >;
-    ec_number: Schema.Attribute.String;
-    fema_number: Schema.Attribute.String;
-    inci_name: Schema.Attribute.String;
-    moq: Schema.Attribute.String;
+    ec_number: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    fema_number: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    inci_name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    moq: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
     packaging_size: Schema.Attribute.Component<'shared.title', true>;
-    shelf_life: Schema.Attribute.String;
+    shelf_life: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
   };
 }
 
@@ -1234,9 +1311,31 @@ export interface SharedFieldDropdown extends Struct.ComponentSchema {
     displayName: 'field_dropdown';
   };
   attributes: {
-    option: Schema.Attribute.Component<'shared.title', true>;
+    option: Schema.Attribute.Component<'career.option', true>;
     placeholder: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFieldFile extends Struct.ComponentSchema {
+  collectionName: 'components_shared_field_files';
+  info: {
+    displayName: 'field_file';
+  };
+  attributes: {
+    button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    placeholder: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1410,7 +1509,10 @@ export interface SharedTitle extends Struct.ComponentSchema {
     displayName: 'title';
   };
   attributes: {
-    size: Schema.Attribute.String;
+    size: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
   };
 }
 
@@ -1577,7 +1679,9 @@ declare module '@strapi/strapi' {
       'career.growing-together': CareerGrowingTogether;
       'career.growing-together-slide': CareerGrowingTogetherSlide;
       'career.hero-section': CareerHeroSection;
+      'career.join-us-modal': CareerJoinUsModal;
       'career.life-at-indesso': CareerLifeAtIndesso;
+      'career.option': CareerOption;
       'career.testimonial': CareerTestimonial;
       'career.testimonial-data': CareerTestimonialData;
       'contact-us.contact-us-page': ContactUsContactUsPage;
@@ -1629,6 +1733,7 @@ declare module '@strapi/strapi' {
       'shared.feature': SharedFeature;
       'shared.feature-section': SharedFeatureSection;
       'shared.field-dropdown': SharedFieldDropdown;
+      'shared.field-file': SharedFieldFile;
       'shared.field-name': SharedFieldName;
       'shared.hero': SharedHero;
       'shared.keywords': SharedKeywords;

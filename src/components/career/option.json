@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_career_options",
+  "info": {
+    "displayName": "option"
+  },
+  "options": {},
+  "attributes": {
+    "option": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

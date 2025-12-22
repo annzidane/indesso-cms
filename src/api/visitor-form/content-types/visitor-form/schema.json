@@ -4,7 +4,7 @@
   "info": {
     "singularName": "visitor-form",
     "pluralName": "visitor-forms",
-    "displayName": "CA - Visitor Form"
+    "displayName": "CU - Visitor Form"
   },
   "options": {
     "draftAndPublish": true

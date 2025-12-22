@@ -28,9 +28,32 @@
         "audios"
       ]
     },
-    "button": {
+    "opportunities_button": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "label_visit_button": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "logo_visit_button": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url_visit_button": {
+      "type": "text",
+      "maxLength": 150,
+      "required": true
+    },
+    "join_us_modal": {
       "type": "component",
-      "component": "shared.button",
+      "component": "career.join-us-modal",
       "repeatable": false
     }
   },

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "connection-form",
     "pluralName": "connection-forms",
-    "displayName": "CA - Connection Form"
+    "displayName": "CU - Connection Form"
   },
   "options": {
     "draftAndPublish": true

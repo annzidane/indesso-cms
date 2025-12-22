@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_career_join_us_modals",
+  "info": {
+    "displayName": "join_us_modal"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "field_name": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_email": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_contact": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_address": {
+      "type": "component",
+      "component": "shared.field-name",
+      "repeatable": false
+    },
+    "field_position": {
+      "type": "component",
+      "component": "shared.field-dropdown",
+      "repeatable": false
+    },
+    "field_file": {
+      "type": "component",
+      "component": "shared.field-file",
+      "repeatable": false
+    },
+    "submit_button": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

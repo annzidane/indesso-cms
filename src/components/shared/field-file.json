@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_field_files",
+  "info": {
+    "displayName": "field_file"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "placeholder": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "button": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}
