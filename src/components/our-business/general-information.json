@@ -6,7 +6,8 @@
   "options": {},
   "attributes": {
     "cas_number": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     },
     "certification": {
       "type": "component",
@@ -14,19 +15,24 @@
       "repeatable": true
     },
     "inci_name": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     },
     "moq": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     },
     "ec_number": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     },
     "shelf_life": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     },
     "fema_number": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     },
     "packaging_size": {
       "type": "component",

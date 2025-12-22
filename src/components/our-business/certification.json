@@ -6,7 +6,8 @@
   "options": {},
   "attributes": {
     "certificate": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     }
   },
   "config": {}

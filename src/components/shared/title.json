@@ -6,7 +6,8 @@
   "options": {},
   "attributes": {
     "size": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 64
     }
   },
   "config": {}
