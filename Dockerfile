@@ -10,7 +10,6 @@ ENV NODE_ENV=${NODE_ENV}
 # Set working directory
 WORKDIR /opt/
 COPY package.json package-lock.json ./
-COPY patches ./patches
 RUN npm install -g node-gyp
 # postinstall script will run patch-package automatically
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install
