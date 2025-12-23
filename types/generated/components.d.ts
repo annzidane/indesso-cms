@@ -1158,7 +1158,11 @@ export interface OurBusinessListProductSection extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1348,7 +1352,7 @@ export interface SharedContactUs extends Struct.ComponentSchema {
     field_email: Schema.Attribute.Component<'shared.field-name', false>;
     field_name: Schema.Attribute.Component<'shared.field-name', false>;
     field_note: Schema.Attribute.Component<'shared.field-name', false>;
-    field_topic: Schema.Attribute.Component<'shared.field-dropdown', false>;
+    field_topic: Schema.Attribute.Component<'shared.field-name', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.Text &
       Schema.Attribute.Required &

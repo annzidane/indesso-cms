@@ -40,7 +40,7 @@
     },
     "field_topic": {
       "type": "component",
-      "component": "shared.field-dropdown",
+      "component": "shared.field-name",
       "repeatable": false
     },
     "field_note": {
