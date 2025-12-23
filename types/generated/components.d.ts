@@ -940,8 +940,16 @@ export interface OurBusinessBotanicalSourceSection
     displayName: 'botanical_source_section';
   };
   attributes: {
-    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -953,9 +961,17 @@ export interface OurBusinessBusinessApplianceSection
   };
   attributes: {
     description: Schema.Attribute.Text;
-    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -967,10 +983,18 @@ export interface OurBusinessBusinessSummarySection
   };
   attributes: {
     description: Schema.Attribute.Text;
-    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     slidder: Schema.Attribute.Component<'our-business.slidder-card', true>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1053,15 +1077,51 @@ export interface OurBusinessGeneralInformationTitle
     displayName: 'general_information_title';
   };
   attributes: {
-    cas_label: Schema.Attribute.String;
-    certification_label: Schema.Attribute.String;
-    ec_label: Schema.Attribute.String;
-    fema_label: Schema.Attribute.String;
-    inci_label: Schema.Attribute.String;
-    moq_label: Schema.Attribute.String;
-    packaging_label: Schema.Attribute.String;
-    shelf_life_label: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    cas_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    certification_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    ec_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    fema_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    inci_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    moq_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    packaging_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    shelf_life_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1083,7 +1143,11 @@ export interface OurBusinessHotSpot extends Struct.ComponentSchema {
   attributes: {
     feature_desc: Schema.Attribute.Text & Schema.Attribute.Required;
     feature_icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    feature_title: Schema.Attribute.String & Schema.Attribute.Required;
+    feature_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1117,10 +1181,18 @@ export interface OurBusinessOurCatalogSection extends Struct.ComponentSchema {
     background_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
     button: Schema.Attribute.Component<'shared.button', false>;
-    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text: Schema.Attribute.Blocks;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1136,11 +1208,31 @@ export interface OurBusinessProductDetailSection
       'our-business.general-information-title',
       false
     >;
-    title_accordion: Schema.Attribute.String;
-    title_application: Schema.Attribute.String;
-    title_botanical: Schema.Attribute.String;
-    title_format: Schema.Attribute.String;
-    title_organoleptic: Schema.Attribute.String;
+    title_accordion: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_application: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_botanical: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_format: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title_organoleptic: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1150,12 +1242,20 @@ export interface OurBusinessSlidderCard extends Struct.ComponentSchema {
     displayName: 'slidder_card';
   };
   attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     hot_spot: Schema.Attribute.Component<'our-business.hot-spot', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     partner_logo: Schema.Attribute.Media<'images' | 'files'>;
     Subsidiary_text: Schema.Attribute.Blocks;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1239,14 +1339,22 @@ export interface SharedContactUs extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.String & Schema.Attribute.Required;
-    eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     field_company_name: Schema.Attribute.Component<'shared.field-name', false>;
     field_email: Schema.Attribute.Component<'shared.field-name', false>;
     field_name: Schema.Attribute.Component<'shared.field-name', false>;
     field_note: Schema.Attribute.Component<'shared.field-name', false>;
     field_topic: Schema.Attribute.Component<'shared.field-dropdown', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    title: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1312,8 +1420,16 @@ export interface SharedFieldDropdown extends Struct.ComponentSchema {
   };
   attributes: {
     option: Schema.Attribute.Component<'career.option', true>;
-    placeholder: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1345,8 +1461,16 @@ export interface SharedFieldName extends Struct.ComponentSchema {
     displayName: 'field_name';
   };
   attributes: {
-    placeholder: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -1427,18 +1551,18 @@ export interface SharedPageSlug extends Struct.ComponentSchema {
     path: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 225;
+        maxLength: 100;
       }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 225;
+        maxLength: 100;
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 225;
+        maxLength: 100;
       }>;
   };
 }
@@ -1487,7 +1611,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
       }>;
     meta_title: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
+        maxLength: 100;
       }>;
   };
 }

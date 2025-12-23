@@ -7,7 +7,7 @@
   "attributes": {
     "meta_title": {
       "type": "text",
-      "maxLength": 60
+      "maxLength": 100
     },
     "meta_description": {
       "type": "text",

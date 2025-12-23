@@ -6,13 +6,19 @@
   "options": {},
   "attributes": {
     "title_botanical": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "title_organoleptic": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "title_format": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "general_information_label": {
       "type": "component",
@@ -20,13 +26,17 @@
       "repeatable": false
     },
     "title_application": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "description_application": {
       "type": "text"
     },
     "title_accordion": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

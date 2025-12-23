@@ -7,10 +7,12 @@
   "attributes": {
     "eyebrow": {
       "type": "string",
+      "maxLength": 100,
       "required": true
     },
     "title": {
       "type": "text",
+      "maxLength": 100,
       "required": true
     },
     "image": {

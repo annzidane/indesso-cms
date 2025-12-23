@@ -6,10 +6,14 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "placeholder": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "option": {
       "type": "component",

@@ -6,31 +6,49 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "cas_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "certification_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "inci_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "moq_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "ec_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "shelf_life_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "fema_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "packaging_label": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

@@ -7,18 +7,18 @@
   "attributes": {
     "title": {
       "type": "string",
-      "maxLength": 225,
+      "maxLength": 100,
       "required": true
     },
     "slug": {
       "type": "string",
-      "maxLength": 225,
+      "maxLength": 100,
       "required": true,
       "unique": true
     },
     "path": {
       "type": "string",
-      "maxLength": 225,
+      "maxLength": 100,
       "required": true
     }
   },
