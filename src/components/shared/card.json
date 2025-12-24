@@ -10,7 +10,7 @@
     },
     "number": {
       "type": "integer",
-      "max": 100
+      "max": 10000
     },
     "description": {
       "type": "text"

@@ -12,7 +12,7 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 100,
+      "maxLength": 255,
       "required": true
     },
     "card_image": {

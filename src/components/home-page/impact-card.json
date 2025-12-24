@@ -12,8 +12,7 @@
     },
     "number": {
       "type": "integer",
-      "required": true,
-      "max": 100
+      "required": true
     },
     "title": {
       "type": "string",
