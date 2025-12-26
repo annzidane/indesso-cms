@@ -1772,16 +1772,20 @@ export interface ApiProductSubCategoryProductSubCategory
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product-sub-category.product-sub-category'
-    > &
-      Schema.Attribute.Private;
+    >;
     page_sections: Schema.Attribute.DynamicZone<
       [
         'our-business.our-catalog-section',
@@ -1789,13 +1793,23 @@ export interface ApiProductSubCategoryProductSubCategory
         'our-business.business-appliance-section',
         'our-business.botanical-source-section',
       ]
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     product_categories: Schema.Attribute.Relation<
       'oneToMany',
       'api::product-type.product-type'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1803,6 +1817,11 @@ export interface ApiProductSubCategoryProductSubCategory
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;

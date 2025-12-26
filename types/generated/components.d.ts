@@ -685,7 +685,7 @@ export interface HomePageBusinessCard extends Struct.ComponentSchema {
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 255;
       }>;
     ingredient_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
@@ -760,14 +760,7 @@ export interface HomePageImpactCard extends Struct.ComponentSchema {
         maxLength: 100;
       }>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    number: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 100;
-        },
-        number
-      >;
+    number: Schema.Attribute.Integer & Schema.Attribute.Required;
     opener: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -966,7 +959,7 @@ export interface OurBusinessBusinessApplianceSection
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1249,7 +1242,7 @@ export interface OurBusinessSlidderCard extends Struct.ComponentSchema {
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 255;
       }>;
     hot_spot: Schema.Attribute.Component<'our-business.hot-spot', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
@@ -1328,7 +1321,7 @@ export interface SharedCard extends Struct.ComponentSchema {
     number: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          max: 100;
+          max: 10000;
         },
         number
       >;
